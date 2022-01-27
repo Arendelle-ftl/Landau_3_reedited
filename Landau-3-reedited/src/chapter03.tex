@@ -765,7 +765,7 @@ As $ \xi\to\infty  $, the function $\psi$ behaves asymptotically as $ e^{\pm\xi/
 	\begin{tikzpicture}
 	\draw[->] (-2,0)--(4,0);
 	\draw[->] (0,-2)--(0,2);
-	\draw[ thick,domain =-0.87:3.5] plot(\x,{1.5*( exp(-2*\x)-2*exp(-1*\x))}); 
+	\draw[ thick,domain =-0.87:3.5,smooth] plot(\x,{1.5*( exp(-2*\x)-2*exp(-1*\x))}); 
 	\coordinate[label=right:$ U(x) $](Ux) at (0,2);
 	\coordinate[label=below:$ x $](x) at (4,0);
 	\coordinate[label=below left:$ -A $](-A) at (0,-1.5);
@@ -805,7 +805,7 @@ obtaining
 	\begin{tikzpicture}
 	\draw[->] (-2,0)--(2,0);
 	\draw[->] (0,-1.2)--(0,0.5);
-	\draw[ thick,domain =-1.8:1.8] plot(\x,{-1/( cosh(\x)*cosh(\x))}); 
+	\draw[ thick,domain =-1.8:1.8,smooth] plot(\x,{-1/( cosh(\x)*cosh(\x))}); 
 	\coordinate[label=right:$ U(x) $](Ux) at (0,0.4);
 	\coordinate[label=right:$ x $](x) at (2,0);
 	\coordinate[label=below left:$ -U_0 $](-U0) at (0,-1);
@@ -903,7 +903,7 @@ Let us consider the motion of particles in a field of the type shown in Fig. \re
 	\draw[->] (-2,0)--(2,0);
 	\draw[->] (0,0)--(0,2);
 	\draw[dashed] (0,1.8)--(2,1.8);
-	\draw[ thick,domain =-2:2] plot(\x,{1.8/(1+exp(-2*\x)))});
+	\draw[ thick,domain =-2:2,smooth] plot(\x,{1.8/(1+exp(-2*\x)))});
 	\coordinate[label=right:$ U(x) $](Ux) at (0,2);
 	\coordinate[label=below:$ x $](x) at (2,0);
 	\coordinate[label=left:$ U_0 $](U0) at (0,1.8);
@@ -1094,7 +1094,7 @@ In the limiting case of classical mechanics. $ R $ becomes zero, as it should.
 	\begin{tikzpicture}
 	\draw[->] (-2.5,0)--(2.5,0);
 	\draw[->] (0,0)--(0,1.5);
-	\draw[ thick,domain =-2.5:2.5] plot(\x,{1/(cosh(\x)*cosh(\x))))});
+	\draw[ thick,domain =-2.5:2.5,smooth] plot(\x,{1/(cosh(\x)*cosh(\x))))});
 	\coordinate[label=right:$ U(x) $](Ux) at (0,1.5);
 	\coordinate[label=right:$ x $](x) at (2.5,0);
 	\coordinate[label=above left:$ U_0 $](U0) at (0,1);
