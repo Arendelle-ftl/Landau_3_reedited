@@ -557,7 +557,7 @@ In this sum, only the terms with $ l = n \pm 1 $ are different from zero, so tha
 \end{equation}
 
 
-From this equation we deduce that the quantities $  \left(x_{n+1,n}\right)^2$ form an arithmetic progression, which is unbounded above, but is certainly bounded below, since it can contain only positive terms. Since we have as yet fixed only the relative positions of the numbers $ n $ of the states, but not their absolute values, we can arbitrarily choose the value of $ n $ corresponding to the first (normal) state of the oscillator, and put this value equal to zero. Accordingly $ x_{0,−1} $ must be regarded as being zero identically, and the application of equations \eqref{23.3} with $ n = 0, 1,\cdots $ successively leads to the result
+From this equation we deduce that the quantities $  \left(x_{n+1,n}\right)^2$ form an arithmetic progression, which is unbounded above, but is certainly bounded below, since it can contain only positive terms. Since we have as yet fixed only the relative positions of the numbers $ n $ of the states, but not their absolute values, we can arbitrarily choose the value of $ n $ corresponding to the first (normal) state of the oscillator, and put this value equal to zero. Accordingly $ x_{0,-1} $ must be regarded as being zero identically, and the application of equations \eqref{23.3} with $ n = 0, 1,\cdots $ successively leads to the result
 \[ \left(x_{n,n-1}\right)^2=\frac{n\h}{2m\omega} .\]
 
 
@@ -572,7 +572,7 @@ x_{n,n-1}=x_{n-1,n}=\sqrt{\frac{n\h}{2m\omega}}
 The matrix of the operator $\hat{H}$ is diagonal, and the matrix elements $ H_{nn} $ are the required eigenvalues $ E_n $ of the energy of the oscillator. To calculate them, we write
 \begin{multline*}
 H_{nn}=E_n=\frac{m}{2}\left[ \left(\dot{x}^2\right)_{nn}+\omega^2(x^2)_{nn}\right]=\\
-=\frac{m}{2}\left[\sum_l\i\omega_{nl}x_{nl}\i\omega_{ln}x_{ln}+\omega^2\sum_lx_{nl}x_{ln}  \right]=\frac{m}{2}\left(\omega^2+\omega_{nl}^2\right)x_{ln}^2.
+=\frac{m}{2}\left[\sum_l\i\omega_{nl}x_{nl}\i\omega_{ln}x_{ln}+\omega^2\sum_lx_{nl}x_{ln}  \right]=\frac{m}{2}\sum_{l}\left(\omega^2+\omega_{nl}^2\right)x_{ln}^2.
 \end{multline*}
 In the sum over $ l $, only the terms with $ l = n\pm1 $ are different from zero; substituting \eqref{23.4}, we obtain
 \begin{equation}\label{23.5}
@@ -628,20 +628,19 @@ By calculating the integrals $ \int_{-\infty}^{+\infty}\psi_n\psi_m\xi\d \xi $, 
 
 Finally, we shall show how the wave functions $\psi_n$ may be calculated by the matrix method. We notice that, in the matrices of the operators $ \hat{\dot{x}}\pm\i\omega\hat{x} $, the only elements different from zero are
 \begin{equation}\label{23.14}
-(\dot{x}-\i\omega x)_{n,n-1}=-(\dot{x}+\i\omega)_{n,n-1}-\i\sqrt{\frac{2\omega\h n}{m}}
+(\dot{x}-\i\omega x)_{n,n-1}=-(\dot{x}+\i\omega)_{n,n-1}=-\i\sqrt{\frac{2\omega\h n}{m}}
 \end{equation}
 
 
 
-Using the general formula \eqref{11.11}, and taking into account the fact that $ ψ_{−1}\equiv 0 $, we conclude that
-\[ \frac{\d \psi_0}{\d x}=-\frac{m\omega}{\h}x\psi_0, \]
-
+Using the general formula \eqref{11.11}, and taking into account the fact that $ \psi_{−1}\equiv 0 $, we conclude that
+\[ (\hat{\dot{x}}-\i\omega x)\psi_0=0 \]
 
 
 After substituting the expression $ \hat{\dot{x}}=-\i\frac{\h}{m}\frac{\d}{\d x} $, we obtain the equation
 \[ \frac{\d \psi_0}{\d x}=-\frac{m\omega}{\h}x\psi_0 \]
 whose normalized solution is \eqref{23.13}. And, since
-\[ (\hat{\dot{x}}+\i\omega\hat{x})\psi_{n-1}=(\dot{x}+\i\omega x)_{n,n-1}\psi_n=\i\sqrt{\frac{2\omega\h n}{m}}\psi_n, \]
+\[ (\hat{\dot{x}}+\i\omega\hat{x})\psi_{n-1}=(\dot{x}+\i\omega x)_{n,n-1}\psi_{n}=\i\sqrt{\frac{2\omega\h n}{m}}\psi_n, \]
 we obtain the recurrence formula
 \begin{multline*}
 \psi_n=\sqrt{\frac{m}{2\omega\h n}}\left(-\frac{\h}{m}\frac{\d}{\d x}+\omega x \right)\psi_{n-1}=\frac{1}{\sqrt{2n}}\left(-\frac{\d}{\d\xi}+\xi \right)\psi_{n-1}=\\

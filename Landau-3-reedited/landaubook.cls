@@ -36,6 +36,7 @@
 \RequirePackage{caption}
 \RequirePackage{multirow}
 \RequirePackage{makecell}
+\RequirePackage{diagbox}
 % note: 使用 unicode-math 替换数学字体宏包
 % note: 使用 imakeidx 宏包创建 index
 % note: 使用 wrapfig 绘制绕排
@@ -105,7 +106,7 @@
 
 % new commands
 \AtBeginDocument{%
-  \renewcommand{\phi}{\varphi}
+  \renewcommand{\phi}{\varphi}　
   \renewcommand{\hat}{\widehat}
   \renewcommand{\tilde}{\widetilde}
   \renewcommand{\bar}{\overline}
