@@ -1,0 +1,659 @@
+\chapter{ENERGY AND MOMENTUM}
+\section{The Hamiltonian operator}\label{The Hamiltonian operator}
+
+The wave function $ \Psi $ completely determines the state of a physical system in quantum mechanics. This means that, if this function is given at some instant, not only are all the properties of the system at that instant described, but its behaviour at all subsequent instants is determined (only, of course, to the degree of completeness which is generally admissible in quantum mechanics). The mathematical expression of this fact is that the value of the derivative $ \partial\Psi/\partial t $ of the wave function with respect to time at any given instant must be determined by the value of the function itself at that instant, and, by the principle of superposition, the relation between them must be linear. In the most general form we can write
+\begin{equation}\label{8.1}
+\mathrm{i}\hbar\frac{\partial\Psi}{\partial t}=\hat{H}\Psi
+\end{equation}
+where $ \hat{H} $ is some linear operator; the factor $ \mathrm{i}\hbar $ is introduced here for a reason that will become apparent.
+
+Since the integral $ \int\Psi^*\Psi\mathrm{d}q $ is a constant independent of time, we have
+\[ \frac{\mathrm{d}}{\mathrm{d}t}\int|\Psi|^2\mathrm{d}q=\int\frac{\partial\Psi^*}{\partial t}\Psi\mathrm{d}q+\int\Psi^*\frac{\partial\Psi}{\partial t}\mathrm{d}q=0 \]
+Substituting here \eqref{8.1} and using in the first integral the definition of the transpose of an operator, we can write (omitting the common factor $ \mathrm{i}/\hbar $)
+
+\begin{align*}
+\int\Psi\hat{H}^*\Psi^*\mathrm{d}q-\int\Psi^*\hat{H}\Psi\mathrm{d}q&=\int\Psi^*\tilde{\hat{H}}^*\Psi\mathrm{d}q-\int\Psi^*\hat{H}\Psi\mathrm{d}q\\
+&=\int\Psi^*\left(\tilde{\hat{H}}^*-\hat{H} \right)\Psi\mathrm{d}q=0.
+\end{align*}
+Since this equation must hold for an arbitrary function $ \Psi $, it follows that we must have identically $ \hat{H}^\dag=\hat{H} $; the operator $ \hat{H} $ is therefore Hermitian. Let us find the physical quantity to which it corresponds. To do this, we use the limiting expression \eqref{6.1} for the wave function and write
+\[ \frac{\partial\Psi}{\partial t}=\frac{\mathrm{i}}{\hbar}\frac{\partial S}{\partial t}\Psi; \]
+the slowly varying amplitude $ a $ need not be differentiated. Comparing this equation with the definition \eqref{8.1}, we see that, in the limiting case, the operator $ \hat{H} $ reduces to simply multiplying by $ -\partial S/\partial t $. This means that $ -{\partial S}/{\partial t} $ is the physical quantity into which the Hermitian operator $ \hat{H} $ passes.
+
+The derivative $ -{\partial S}/{\partial t} $ is just Hamilton’s function $ H $ for a mechanical system. Thus the operator $ \hat{H} $ is what corresponds in quantum mechanics to Hamilton’s function; this operator is called the \textit{Hamiltonian operator} or, more briefly, the \textit{Hamiltonian} of the system. If the form of the Hamiltonian is known, equation \eqref{8.1} determines the wave functions of the physical system concerned. This fundamental equation of quantum mechanics is called the \textit{wave equation}.
+\section{The differentiation of operators with respect to time}\label{The differentiation of operators with respect to time}
+
+The concept of the derivative of a physical quantity with respect to time cannot be defined in quantum mechanics in the same way as in classical mechanics. For the definition of the derivative in classical mechanics involves the consideration of the values of the quantity at two neighbouring but distinct instants of time. In quantum mechanics, however, a quantity which at some instant has a definite value does not in general have definite values at subsequent instants; this was discussed in detail in \S\ref{The uncertainty principle}.
+
+Hence the idea of the derivative with respect to time must be differently defined in quantum mechanics. It is natural to define the \textit{derivative} $ \dot{f} $ of a quantity $ f $ as the quantity whose mean value is equal to the derivative, with respect to time, of the mean value . Thus we have the definition
+\begin{equation}\label{9.1}
+\dot{\bar{f}}=\bar{\dot{f}}
+\end{equation}
+Starting from this definition, it is easy to obtain an expression for the quantum-mechanical operator $ \hat{\dot{f}} $ corresponding to the quantity $ \hat{f} $:
+\[ \dot{\bar{f}}=\bar{\dot{f}}=\frac{\mathrm{d}}{\mathrm{d}t}\int\Psi^*\hat{f}\Psi\mathrm{d}q=\int\Psi^*\frac{\partial\hat{f}}{\partial t}\Psi\mathrm{d}q+\int\frac{\partial\Psi^*}{\partial t}\hat{f}\Psi\mathrm{d}q+\int\Psi^*\hat{f}\frac{\partial\Psi}{\partial t}\mathrm{d}q. \]
+Here $ \partial f/\partial t $ is the operator obtained by differentiating the operator f with respect to time; $ \hat{f} $ may depend on the time as a parameter. Substituting for $ \partial\Psi/\partial t $, $ \partial\Psi^*/\partial t $ their expressions according to \eqref{8.1}, we obtain
+\[ \bar{\dot{f}}=\int\Psi^*\frac{\partial\hat{f}}{\partial t}\Psi\mathrm{d}q+\frac{\mathrm{i}}{\hbar}\int(\hat{H}^*\Psi^*)\hat{f}\Psi\mathrm{d}q-\frac{\mathrm{i}}{\hbar}\int\Psi^*\hat{f}(\hat{H}\Psi)\mathrm{d}q. \]
+Since the operator $ \hat{H} $ is Hermitian, we have
+\[ \int(\hat{H}^*\Psi^*)(\hat{f}\Psi)\mathrm{d}q=\int\Psi^*\hat{H}\hat{f}\Psi\mathrm{d}q; \]
+thus
+\[ \bar{\dot{f}}=\int\Psi^*\left( \frac{\partial\hat{f}}{\partial t}+\frac{\mathrm{i}}{\hbar}\hat{H}\hat{f}-\frac{\mathrm{i}}{\hbar}\hat{f}\hat{H} \right)\Psi\mathrm{d}q. \]
+
+
+
+Since, on the other hand, we must have, by the definition of mean values, $ \bar{\dot{f}}=\int\Psi^*\hat{\dot{f}}\Psi\mathrm{d}q $, it is seen that the expression in parentheses in the integrand is the required operator $ \hat{\dot{f}} $:\footnote{In classical mechanics we have for the total derivative, with respect to time, of a quantity $ f $ which is a function of the generalized coordinates $ q_i $ and momenta $ p_i $ of the system
+\[ \frac{\mathrm{d}f}{\mathrm{d}t}=\frac{\partial f}{\partial t}+\sum_{i}\left(\frac{\partial f}{\partial q_i}\dot{q_i}+\frac{\partial f}{\partial p_i}\dot{p_i}  \right). \]	
+Substituting, in accordance with Hamilton’s equations, $ q_i =\frac{\partial H}{\partial p_i}  $ and $ p_i =-\frac{\partial H}{\partial q_i} $, we obtain
+	\[ \frac{\mathrm{d}f}{\mathrm{d}t}=\frac{\partial f}{\partial t}+\left[ H,f\right], \]
+where
+\[ \left[ H,f\right]\equiv\sum_{i}\left(\frac{\partial f}{\partial q_i}\frac{\partial H}{\partial p_i}-\frac{\partial f}{\partial p_i}\frac{\partial H}{\partial q_i}  \right) \]	
+is what is called the \textit{Poisson bracket} for the quantities $ f $ and $ H $ (see Mechanics, §42). On comparing with the expression \eqref{9.2}, we see that, as we pass to the limit of classical mechanics, the operator $ \mathrm{i}(\hat{H}\hat{f}-\hat{f}\hat{H}) $ reduces in the first approximation to zero, as it should, and in the second approximation (with respect to $\hbar$) to the quantity $ \hbar\left[ H,f\right] $. This result is true also for any two quantities $ f $ and $ g $; the operator $ \mathrm{i}(\hat{f}\hat{g}-\hat{g}\hat{f}) $ tends in the limit to the quantity $ \hbar\left[ f,g\right] $, where $ \left[ f,g\right] $ is the Poisson bracket
+\[ \left[ f,g\right]\equiv\sum_{i}\left(\frac{\partial g}{\partial q_i}\frac{\partial f}{\partial p_i}-\frac{\partial g}{\partial p_i}\frac{\partial f}{\partial q_i}  \right) \]
+This follows from the fact that we can always formally imagine a system whose Hamiltonian is $ \hat{g} $.}
+\begin{equation}\label{9.2}
+\hat{\dot{f}}=\frac{\partial f}{\partial t}+\frac{\mathrm{i}}{\hbar}(\hat{H}\hat{f}-\hat{f}\hat{H})
+\end{equation}
+
+If the operator $ \hat{f} $ is independent of time, $ \hat{\dot{f}} $ reduces, apart from a constant factor, to the commutator of the operator $ \hat{f} $ and the Hamiltonian.
+
+A very important class of physical quantities is formed by those whose operators do not depend explicitly on time, and also commute with the Hamiltonian, so that $ \hat{\dot{f}}=0 $. Such quantities are said to be \textit{conserved}. For these $ \bar{\dot{f}}=\dot{\bar{f}} = 0 $, that is, is constant. In other words, the mean value of the quantity remains constant in time. We can also assert that, if in a given state the quantity $ f $ has a definite value (i.e. the wave function is an eigenfunction of the operator $\hat{f}$), then it will have a definite value (the same one) at subsequent instants also.
+\section{Stationary states}\label{Stationary states}
+The Hamiltonian of a closed system (and of a system in a \textit{constant} external field) cannot contain the time explicitly. This follows from the fact that, for such a system, all times are equivalent. Since, on the other hand, any operator of course commutes with itself, we reach the conclusion that Hamilton’s function is conserved for systems which are not in a varying external field. As is well known, a Hamilton’s function which is conserved is called the \textit{energy}. The law of conservation of energy in quantum mechanics signifies that, if in a given state the energy has a definite value, this value remains constant in time.
+
+States in which the energy has definite values are called \textit{stationary states} of a system. They are described by wave functions $ \Psi_n $ which are the eigenfunctions of the Hamiltonian operator, i.e. which satisfy the equation $ \hat{H}\Psi_n=E_n\Psi_n $, where $ E_n $ are the eigenvalues of the energy. Correspondingly, the wave equation \eqref{8.1} for the function $ \Psi_n $,
+\[ \mathrm{i}\hbar\frac{\partial\Psi_n}{\partial t}=\hat{H}\Psi_n=E_n\Psi_n \]
+can be integrated at once with respect to time and gives
+\begin{equation}\label{10.1}
+\Psi_n=\exp\left(-\frac{\mathrm{i}}{\hbar}E_nt\right)\psi_n(q)
+\end{equation}
+where $ \Psi_n $ is a function of the coordinates only. This determines the relation between the wave functions of stationary states and the time.
+
+We shall denote by the small letter $ \psi $ the wave functions of stationary states without the time factor. These functions, and also the eigenvalues of the energy, are determined by the equation
+\begin{equation}\label{10.2}
+\hat{H}\psi=E\psi
+\end{equation}
+
+
+The stationary state with the smallest possible value of the energy is called the \textit{normal} or \textit{ground state} of the system.
+
+The expansion of an arbitrary wave function $ \Psi $ in terms of the wave functions of stationary states has the form
+\begin{equation}\label{10.3}
+\Psi=\sum_{n}a_n\exp\left(-\frac{\mathrm{i}}{\hbar}E_nt\right)\psi_n(q)
+\end{equation}
+
+
+The squared moduli $ |a_n|^2 $ of the expansion coefficients, as usual, determine the probabilities of various values of the energy of the system.
+
+The probability distribution for the coordinates in a stationary state is determined by the squared modulus $ |\Psi_n|^2 = |\psi_n|2 $ we see that it is independent of time. The same is true of the mean values
+\[ \bar{f}=\int\Psi_n^*\hat{f}\Psi_n\mathrm{d}q=\int\psi_n^*\hat{f}\psi_n\mathrm{d}q \]
+of any physical quantity $ f $ (whose operator does not depend explicitly on the time).
+
+As has been said, the operator of any quantity that is conserved commutes with the Hamiltonian. This means that any physical quantity that is conserved can be measured simultaneously with the energy.
+
+Among the various stationary states, there may be some which correspond to the same value of the energy (the same \textit{energy level} of the system), but differ in the values of some other physical quantities. Such energy levels, to which several different stationary states correspond, are said to be \textit{degenerate}. Physically, the possibility that degenerate levels can exist is related to the fact that the energy does not in general form by itself a complete set of physical quantities.
+
+If there are two conserved physical quantities $ f $ and $ g $ whose operators do not commute, then the energy levels of the system are in general degenerate. For, let $ \psi $ be the wave function of a stationary state in which, besides the energy, the quantity $ f $ also has a definite value. Then we can say that the function $ \hat{g}\psi $ does not coincide (apart from a constant factor) with $ \psi $; if it did, this would mean that the quantity $ g $ also had a definite value, which is impossible, since $ f $ and $ g $ cannot be measured simultaneously. On the other hand, the function $ \hat{g}\psi $ is an eigenfunction of the Hamiltonian, corresponding to the same value $ E $ of the energy as $\psi$:
+\[ \hat{H}(\hat{g}\psi)=\hat{g}\hat{H}\psi=E(\hat{g}\psi) \]
+Thus we see that the energy $ E $ corresponds to more than one eigenfunction, i.e. the energy level is degenerate.
+
+It is clear that any linear combination of wave functions corresponding to the same degenerate energy level is also an eigenfunction for that value of the energy. In other words, the choice of eigenfunctions of a degenerate energy level is not unique. Arbitrarily selected eigenfunctions of a degenerate energy level are not, in general, orthogonal. By a proper choice of linear combinations of them, however, we can always obtain a set of orthogonal (and normalized) eigenfunctions (and this can be done in infinitely many ways; for the number of independent coefficients in a linear transformation of $ n $ functions is $ n^2 $, while the number of normalization and orthogonality conditions for $ n $ functions is $  n(n+1)/2 $, i.e. less than $ n^2 $).
+
+These statements concerning the eigenfunctions of a degenerate energy level relate, of course, not only to eigenfunctions of the energy, but also to those of any operator. Only those functions are automatically orthogonal which correspond to different eigenvalues of the operator concerned; functions which correspond to the same degenerate eigenvalue are not in general orthogonal.
+
+If the Hamiltonian of the system is the sum of two (or more) parts, $ \hat{H} = \hat{H}_1 + \hat{H}_2 $, one of which contains only the coordinates $ q_1 $ and the other only the coordinates $ q_2 $, then the eigenfunctions of the operator $\hat{H}$ can be written down as products of the eigenfunctions of the operators $\hat{H}_1$ and $\hat{H}_2$, and the eigenvalues of the energy are equal to the sums of the eigenvalues of these operators.
+
+The spectrum of eigenvalues of the energy may be either discrete or continuous. A stationary state of a discrete spectrum always corresponds to a finite motion of the system, i.e. one in which neither the system nor any part of it moves off to infinity. For, with eigenfunctions of a discrete spectrum, the integral $\int|\Psi|^2\mathrm{d}q$, taken over all space, is finite. This certainly means that the squared modulus $ |\Psi|^2 $ decreases quite rapidly, becoming zero at infinity. In other words, the probability of infinite values of the coordinates is zero; that is, the system executes a finite motion, and is said to be in a \textit{bound state}.
+
+For wave functions of a continuous spectrum, the integral $\int|\Psi|^2\mathrm{d}q$ diverges. Here the squared modulus $ |\Psi|^2 $ of the wave function does not directly determine the probability of the various values of the coordinates, and must be regarded only as a quantity proportional to this probability. The divergence of the integral $\int|\Psi|^2\mathrm{d}q$ is always due to the fact that $ |\Psi|^2 $ does not become zero at infinity (or becomes zero insufficiently rapidly). Hence we can say that the integral $\int|\Psi|^2\mathrm{d}q$, taken over the region of space outside any arbitrarily large but finite closed surface, will always diverge. This means that, in the state considered, the system (or some part of it) is at infinity. For a wave function which is a superposition of the wave functions of various stationary states of a continuous spectrum, the integral $\int|\Psi|^2\mathrm{d}q$ may converge, so that the system lies in a finite region of space. However, in the course of time, this region moves unrestrictedly, and eventually the system moves off to infinity. This can be seen as follows. Any superposition of wave functions of a continuous spectrum has the form
+\[ \Psi=\int a_E\exp\left( -\frac{\mathrm{i}}{\hbar}Et\right)\psi_E(q)\mathrm{d}E \]
+
+
+
+The squared modulus of Ψ can be written in the form of a double integral:
+\[ |\Psi|^2=\iint a_Ea_{E'}^*\exp\left(\frac{\mathrm{i}}{\hbar}(E'-E)t \right)\psi_E(q)\psi_{E'}^*(q)\mathrm{d}E\mathrm{d}E'. \]
+If we average this expression over some time interval $ T $, and then let $ T $ tend to infinity, the mean values of the oscillating factors $ \exp\{ \mathrm{i}(E'-E)t/\hbar\} $, and therefore the whole integral, tend to zero in the limit. Thus the mean value, with respect to time, of the probability of finding the system at any given point of configuration space tends to zero. This is possible only if the motion takes place throughout infinite space.\footnote{Note that, for a function $ Ψ $ which is a superposition of functions of a discrete spectrum, we should have
+	\[ \bar{|\Psi|^2}=\sum_{n}\sum_{m}a_na_m^*\bar{\exp\left\{\frac{\mathrm{i}}{\hbar}(E_m-E_n)t  \right\}}\psi_n\psi_m^*=\sum_{n}|a_n\psi_n(q)|^2, \]
+i.e. the probability density remains finite on averaging over time.
+} Thus the stationary states of a continuous spectrum correspond to an infinite motion of the system.
+\section{Matrices}\label{Matrices}
+We shall suppose for convenience that the system considered has a discrete energy spectrum; all the relations obtained below can be generalized at once to the case of a continuous spectrum. Let $ \Psi=\sum a_n\Psi_n $ be the expansion of an arbitrary wave function in terms of the wave functions $ \Psi_n $ of the stationary states. If we substitute this expansion in the definition \eqref{3.8} of the mean value of some quantity $ f $, we obtain
+\begin{equation}\label{11.1}
+\bar{f}=\sum_{n}\sum_{m}a_n^*a_mf_{nm}(t)
+\end{equation}
+where $ f_{nm}(t) $ denotes the integral
+\begin{equation}\label{11.2}
+f_{nm}(t)=\int\Psi_n^*\hat{f}\Psi_m\mathrm{d}q
+\end{equation}
+The set of quantities $ f_{nm}(t) $ with all possible $ n $ and $ m $ is called the \textit{matrix} of the quantity $ f $, and each of the $ f_{nm}(t) $ is called the \textit{matrix element} corresponding to the \textit{transition} from state $ m $ to state $ n $.\footnote{The matrix representation of physical quantities was introduced by Heisenberg in 1925, before Schrödinger’s discovery of the wave equation. “Matrix mechanics” was later developed by M. Born, W. Heisenberg and P. Jordan.
+}
+
+The dependence of the matrix elements $ f_{nm}(t) $ on time is determined (if the operator does not contain the time explicitly) by the dependence of the functions $ \Psi_n $ on time. Substituting for them the expressions \eqref{10.1}, we find that
+\begin{equation}\label{11.3}
+f_{nm}(t)=f_{nm}\mathrm{e}^{\mathrm{i}\omega_{nm}t},
+\end{equation}
+where
+\begin{equation}\label{11.4}
+\omega_{nm}=\frac{E_n-E_m}{\hbar}
+\end{equation}
+is what is called the \textit{transition frequency} between the states $ n $ and $ m $, and the quantities
+\begin{equation}\label{11.5}
+f_{nm}=\int\psi_n^*\hat{f}\psi_m\mathrm{d}q
+\end{equation}
+form the matrix of the quantity $ f $ which is independent of time, and which is commonly used.\footnote{Because of the indeterminacy of the phase factor in normalized wave functions (see \S\ref{The principle of superposition}), the matrix elements $ f_{nm} $ (and $ f_{nm}(t) $) also are determined only to within a factor of the form $ \exp\left[\mathrm{i}(\alpha_m-\alpha_n)\right] $. Here again this indeterminacy has no effect on any physical results.
+}
+
+The matrix elements of the derivative are obtained by differentiating the matrix elements of the quantity $ f $ with respect to time; this follows directly from the fact that
+\begin{equation}\label{11.6}
+\bar{\dot{f}}=\dot{\bar{f}}=\sum_{m}\sum_{n}a_n^*a_m\dot{f}_{nm}(t).
+\end{equation}
+From \eqref{11.3} we thus have for the matrix elements of $ \dot{f} $
+\begin{equation}\label{11.7}
+\dot{f}_{nm}(t)=\mathrm{i}\omega_{nm}f_{nm}(t)
+\end{equation}
+or (cancelling the time factor $ \exp(\mathrm{i}\omega_{nm}t) $ from both sides) for the matrix elements independent of time
+\begin{equation}\label{11.8}
+\left(\dot{f}\right)_{nm}=\mathrm{i}\omega_{nm}f_{nm}=\frac{\mathrm{i}}{\hbar}(E_n-E_m)f_{nm}
+\end{equation}
+
+To simplify the notation in the formulae, we shall derive all our relations below for the matrix elements independent of time; exactly similar relations hold for the matrices which depend on the time.
+
+For the matrix elements of the complex conjugate $ f^* $ of the quantity $ f $ we obtain, taking into account the definition of the Hermitian conjugate operator,
+\[ \left(f^*\right)_{nm}=\int\psi_n^*\hat{f}^\dag\psi_m\mathrm{d}q=\int\psi_n^*\tilde{\hat{f}^*}\psi_m\mathrm{d}q=\int\psi_m\hat{f}^*\psi_n^*\mathrm{d}q \]
+or
+\begin{equation}\label{11.9}
+\left( f^*\right)_{nm}=\left(f_{mn}\right)^*
+\end{equation}
+For real physical quantities, which are the only ones we usually consider, we consequently have
+\begin{equation}\label{11.10}
+f_{nm}=f_{mn}^*
+\end{equation}
+($ f_{mn}^* $ stands for $( f_{mn})^* $). Such matrices, like the corresponding operators, are said to be \textit{Hermitian}.
+
+Matrix elements with $ n = m $ are called diagonal elements. These are independent of time, and \eqref{11.10} shows that they are real. The element $ f_{nn} $ is the mean value of the quantity $ f $ in the state $ \Psi_n $.
+
+It is not difficult to obtain the multiplication rule” for matrices. To do so, we first observe that the formula
+\begin{equation}\label{11.11}
+\hat{f}\psi_n=\sum_{m}f_{mn}\psi_m
+\end{equation}
+holds. This is simply the expansion of the function in terms of the functions $ \psi_m $, the coefficients being determined in accordance with the general formula \eqref{3.5}. Remembering this formula, let us write down the result of the product of two operators acting on the function $ \psi_n $:
+\[ \hat{f}\hat{g}\psi_n=\hat{f}(\hat{g}\psi_n)=\hat{f}\sum_{k}g_{kn}\psi_k=\sum_{k}g_{kn}\hat{f}\psi_k=\sum_{k,m}g_{kn}f_{mk}\psi_m. \]
+Since, on the other hand, we must have
+\[ \hat{f}\hat{g}\psi_n=\sum_{m}(fg)_{mn}\psi_m, \]
+we arrive at the result that the matrix elements of the product $ fg $ are determined by the formula
+\begin{equation}\label{11.12}
+(fg)_{mn}=\sum_{k}f_{mk}g_{kn}
+\end{equation}
+This rule is the same as that used in mathematics for the multiplication of matrices: the rows of the first matrix in the product are multiplied by the columns of the second matrix.
+
+If the matrix is given, then so is the operator itself. In particular, if the matrix is given, it is in principle possible to determine the eigenvalues of the physical quantity concerned and the corresponding eigenfunctions.
+
+We shall now consider the values of all quantities at some definite instant, and expand an arbitrary wave function $ \Psi $ (at that instant) in terms of the eigenfunctions of the Hamiltonian, i.e. of the wave functions $\psi_m$ of the stationary states (these wave functions are independent of time).
+\begin{equation}\label{11.13}
+\Psi=\sum_{m}c_m\psi_m
+\end{equation}
+where the expansion coefficients are denoted by $ c_m $. We substitute this expansion in the equation $ \hat{f}\Psi=f\Psi $ which determines the eigenvalues and eigenfunctions of the quantity $ f $. We have
+\[ \sum_{m}c_m(\hat{f}\psi_m)=f\sum_{m}c_m\psi_m \]
+We multiply both sides of this equation by $\psi_n^*$ and integrate over $ q $. Each of the integrals on the left-hand side of the equation is the corresponding matrix element $ f_{nm} $. On the right-hand side, all the integrals $ \int\psi_n^*\psi_m\mathrm{d}q $ with $ m\ne n $ vanish by virtue of the orthogonality of the functions $\psi_m$, and $ \int\psi_n^*\psi_n\mathrm{d}q=1 $ by virtue of their normalization.\footnote{In accordance with the general rule (\S\ref{The continuous spectrum}), the set of coefficients $ c_n $ in the expansion \eqref{11.13} can be considered as the wave function in the “energy representation” (the variable being the suffix $ n $ that gives the number of the energy eigenvalue). The matrix $ f_{nm} $ here acts as the operator in this representation, the action of which on the wave function is given by the left-hand side of \eqref{11.14}. The formula then corresponds to the general expression for the mean value of a quantity in terms of its operator and the wave function of the state concerned.
+} Thus
+\begin{equation}\label{11.14}
+\sum_{m}f_{nm}c_m=fc_n,
+\end{equation}
+or
+\[ \sum_{m}(f_{nm}-f\delta_{nm})c_m=0, \]
+where 
+\[ \delta_{nm}=\begin{dcases}
+0, &n\neq m;\\
+1, &n=m.
+\end{dcases} \]
+
+Thus we have obtained a system of homogeneous algebraic equations of the first degree (with the $ c_m $ as unknowns). As is well known, such a system has solutions different from zero only if the determinant formed by the coefficients in the equations vanishes, i.e. only if
+\begin{equation}\label{11.15}
+|f_{nm}-f\delta_{nm}|=0
+\end{equation}
+The roots of this equation (in which $ f $ is regarded as the unknown) are the possible values of the quantity $ f $. The set of values $ c_m $ satisfying the equations \eqref{11.14} when $ f $ is equal to any of these values determines the corresponding eigenfunction.
+
+If, in the definition \eqref{11.5} of the matrix elements of the quantity $ f $, we take as $\psi_n$ the eigenfunctions of this quantity, then from the equation $ \hat{f}\psi_n=f_n\psi_n $ we have
+\[ f_{nm}=\int\psi_n^*\hat{f}\psi_m\mathrm{d}q=f_m\int\psi_n^*\psi_m\mathrm{d}q. \]
+By virtue of the orthogonality and normalization of the functions $\psi_m$, this gives $ f_{nm}= 0 $ for $ n\ne m $ and $ f_{mm} = f_m $. Thus only the diagonal matrix elements are different from zero, and each of these is equal to the corresponding eigenvalue of the quantity $ f $. A matrix with only these elements different from zero is said to be put in \textit{diagonal form}. In particular, in the usual representation, with the wave functions of the stationary states as the functions $\psi_n$, the energy matrix is diagonal (and so are the matrices of all other physical quantities having definite values in the stationary states). In general, the matrix of a quantity f, defined with respect to the eigenfunctions of some operator $ \hat{g} $, is said to be the matrix of $ f $ \textit{in a representation in which $ g $ is diagonal}. We shall always, except where the subject is specially mentioned, understand in future by the matrix of a physical quantity its matrix in the usual representation, in which the energy is diagonal. Everything that has been said above regarding the dependence of matrices on time refers, of course, only to this usual representation.\footnote{Bearing in mind the diagonality of the energy matrix, it is easy to see that equation \eqref{11.8} is the operator relation \eqref{9.2} written in matrix form.
+}
+
+By means of the matrix representation of operators we can prove the theorem mentioned in \S\ref{Addition and multiplication of operators}: if two operators commute with each other, they have their entire sets of eigenfunctions in common. Let $\hat{f}$ and $\hat{g}$ be two such operators. From $ \hat{f}\hat{g}=\hat{g}\hat{f} $ and the matrix multiplication rule \eqref{11.12}, it follows that
+\[ \sum_{k}f_{mk}g_{kn}=\sum_{k}g_{mk}f_{kn}. \]
+If we take the eigenfunctions of the operator $ \hat{f} $ as the set of functions $\psi_n$ with respect to which the matrix elements are calculated, we shall have $ f_{mk}=0 $ for $ m\ne k $, so that the above equation reduces to $ f_{mm}g_{mn} =g_{mn}f_{nn} $, or
+\[ g_{mn}(f_m-f_n)=0 \]
+If all the eigenvalues $ f_n $ of the quantity $ f $ are different, then for all $ m\ne n $ we have $ f_m−f_n\ne 0 $, so that we must have $ g_{mn} = 0 $. Thus the matrix $ g_{mn} $ is also diagonal, i.e. the functions $ \psi_n $ are eigenfunctions of the physical quantity $ g $ also. If, among the values $ f_n $, there are some which are equal (i.e. if there are eigenvalues to which several different eigenfunctions correspond), then the matrix elements $ g_{mn} $ corresponding to each such group of functions $ \psi_n $ are, in general, different from zero. However, linear combinations of the functions $ \psi_n $ which correspond to a single eigenvalue of the quantity $ f $ are evidently also eigenfunctions of $ f $; one can always choose these combinations in such a way that the corresponding non-diagonal matrix elements $ g_{mn} $ are zero, and thus, in this case also, we obtain a set of functions which are simultaneously the eigenfunctions of the operators $\hat{f}$ and $\hat{g}$.
+
+The following formula is useful in applications:
+\begin{equation}\label{11.16}
+\left( \frac{\partial H}{\partial\lambda}\right)_{nn}=\frac{\partial E_n}{\partial\lambda}
+\end{equation}
+where $ \lambda $ is a parameter on which the Hamiltonian $ \hat{H} $ (and therefore the energy eigenvalues $ E_n $) depends. It is proved as follows. Differentiating the equation $ (\hat{H}-E_n)\psi_n = 0 $ with respect to $ \lambda $ and then multiplying on the left by $ \psi_n^* $, we obtain
+\[ \psi_n^*(\hat{H}-E_n)\frac{\partial\psi_n}{\partial\lambda}=\psi_n^*\left(\frac{\partial E_n}{\partial\lambda}-\frac{\partial\hat{H}}{\partial\lambda} \right)\psi_n \]
+On integration with respect to $ q $, the left-hand side gives zero, since
+\[ \int\psi_n^*(\hat{H}-E_n)\frac{\partial\psi_n}{\partial\lambda}\mathrm{d}q=\int\frac{\partial\psi_n}{\partial\lambda}(\hat{H}-E_n)^*\psi_n^*\mathrm{d}q, \]
+the operator $ \hat{H} $ being Hermitian. The right-hand side gives the required equation.
+
+A widely used notation (introduced by Dirac) in recent literature is that which denotes the matrix elements $ f_{nm} $ by\footnote{Both notations are used in the present book. The form \eqref{11.17} is especially convenient when each suffix has to be written as several letters.
+}
+\begin{equation}\label{11.17}
+\langle n|f|m\rangle
+\end{equation}
+
+
+This symbol is written so that it may be regarded as “consisting” of the quantity $ f $ and the symbols $ |m\rangle $ and $ \langle n| $ which respectively stand for the initial and final states as such (independently of the representation of the wave functions of the states). With the same symbols we can construct notations for the expansion coefficients of wave functions: if there is a complete set of wave functions corresponding to the states $ |n_1\rangle, |n_2\rangle,\dots, $ the coefficients in the expansion in terms of these of the wave function of a state $ |m\rangle $ are denoted by
+\begin{equation}\label{11.18}
+\langle n_i|m\rangle=\int\psi_{n_i}^*\psi_m\mathrm{d}q.
+\end{equation}
+
+\section{Transformation of matrices}\label{Transformation of matrices}
+The matrix elements of a given physical quantity can be defined with respect to various sets of wave functions, for example the wave functions of stationary states described by various sets of physical quantities, or the wave functions of stationary states of the same system in various external fields. The problem therefore arises of the transformation of matrices from one representation to another.
+
+Let $\psi_n(q)$ and $\psi_n'(q)$ ($ n = 1,2,\dots $) be two complete sets of orthonormal functions, related by some linear transformation:
+\begin{equation}\label{12.1}
+\psi_n'=\sum_{m}S_{mn}\psi_m
+\end{equation}
+which is simply an expansion of the function $\psi_n'$ in terms of the complete set of functions $\psi_n$. This transformation may be conventionally written in the operator form
+\begin{equation}\label{12.2}
+\psi_n'=\hat{S}\psi_n
+\end{equation}
+
+The operator $\hat{S}$ must satisfy a certain condition in order that the functions $\psi_n'$ should be orthonormal if the functions $\psi_n$ are. Substituting \eqref{12.2} in the condition
+\[ \int\psi_m'^*\psi_n'\mathrm{d}q=\delta_{nm} \]
+and using the definition of the transposed operator \eqref{3.14}, we have
+\[ \int(\hat{S}\psi_n)\hat{S}^*\psi_m^*\mathrm{d}q=\int\psi_m^*\tilde{\hat{S}^*}\hat{S}\psi_n\mathrm{d}q=\delta_{nm} \]
+If these equations hold for all $ m $ and $ n $, we must have $ \tilde{\hat{S}^*}\hat{S}= 1 $, or
+\begin{equation}\label{12.3}
+\tilde{\hat{S}^*}\equiv\hat{S}^\dag=\hat{S}^{-1}
+\end{equation}
+i.e. the inverse operator is equal to the Hermitian conjugate operator. Operators having this property are said to be unitary. Owing to this property, the transformation $ \psi_n=\hat{S}^{-1}\psi_n' $ inverse to \eqref{12.1} is given by
+\begin{equation}\label{12.4}
+\psi_n=\sum_{m}S_{nm}^*\psi_m'
+\end{equation}
+Writing the equations $ \hat{S}^\dag\hat{S}= 1 $ and $ \hat{S}\hat{S}^\dag= 1 $ in matrix form, we obtain the following forms of the \textit{unitarity} condition:
+\begin{equation}\label{12.5}
+\sum_lS_{lm}^*S_{ln}=\delta_{mn}
+\end{equation}
+\begin{equation}\label{12.6}
+\sum_lS_{ml}^*S_{nl}=\delta_{mn}
+\end{equation}
+
+
+Let us now consider some physical quantity $ f $ and write down its matrix elements in the “new” representation, i.e. with respect to the functions $\psi_n'$. These are given by the integrals
+\begin{align*}
+\int\psi_m'^*\hat{f}\psi_n'\mathrm{d}q=\int(\hat{S}^*\psi_m^*)&(\hat{f}\hat{S}\psi_n)\mathrm{d}q\\&=
+\int\psi_m^*\tilde{\hat{S}^*}\hat{f}\hat{S}\psi_n\mathrm{d}q=\int\psi_m^*\hat{S}^{-1}\hat{f}\hat{S}\psi_n\mathrm{d}q.
+\end{align*}
+
+
+
+Hence we see that the matrix of the operator in the new representation is equal to the matrix of the operator
+\begin{equation}\label{12.7}
+\hat{f}'=\hat{S}^{-1}\hat{f}\hat{S}
+\end{equation}
+in the old representation.\footnote{If $ \{\hat{f},\hat{g} \}= -\mathrm{i}\hbar\hat{c} $ is the commutation rule for two operators $ \hat{f} $ and $ \hat{g} $, the transformation \eqref{12.7} gives $ \{\hat{f}',\hat{g}' \}= -\mathrm{i}\hbar\hat{c}' $, i.e. the rule is unchanged. We have shown in the footnote in \S\ref{The differentiation of operators with respect to time} that is the quantum analogue of the classical Poisson bracket $ \left[f, g\right] $. In classical mechanics, however, the Poisson brackets are invariant under canonical transformations of the variables (generalized coordinates and momenta); see Mechanics, \S45. In this sense we can say that unitary transformations in quantum mechanics play a role analogous to that of canonical transformations in classical mechanics.
+}
+
+The sum of the diagonal elements of a matrix is called the \textit{trace} or \textit{spur}\footnote{From the German word \textit{Spur}. The notation $ \mathrm{sp}f $ is also used. The trace can be defined, of course, only if the sum over n is convergent.
+} of the matrix and denoted by $ \mathrm{tr}f: $
+\begin{equation}\label{12.8}
+\mathrm{tr}f=\sum_nf_{nn}
+\end{equation}
+It may be noted first of all that the trace of a product of two matrices is independent of the order of multiplication:
+\begin{equation}\label{12.9}
+\mathrm{tr}(fg)=\mathrm{tr}(gf)
+\end{equation}
+since the rule of matrix multiplication gives
+\[ \mathrm{tr}(fg)=\sum_n\sum_nf_{nk}g_{kn}=\sum_k\sum_ng_{kn}f_{nk}=\mathrm{tr}(gf). \]
+Similarly we can easily see that, for a product of several matrices, the trace is unaffected by a cyclic permutation of the factors; for example,
+\begin{equation}\label{12.10}
+\mathrm{tr}(fgh)=\mathrm{tr}(hfg)=\mathrm{tr}(ghf)
+\end{equation}
+
+
+An important property of the trace is that it does not depend on the choice of the set of functions with respect to which the-matrix elements are defined, since
+\begin{equation}\label{12.11}
+(\mathrm{tr}f)'=\mathrm{tr}(S^{-1}fS)=\mathrm{tr}(S^{-1}Sf)=\mathrm{tr}f
+\end{equation}
+
+
+A unitary transformation leaves unchanged the sum of the squared moduli of the functions that are transformed: from \eqref{12.6} we have
+\begin{equation}\label{12.12}
+\sum_{i}|\psi_i'|^2=\sum_{k,l,i}S_{ki}\psi_kS_{li}^*\psi_l^*=\sum_{k,l}\psi_k\psi_l^*\delta_{kl}=\sum_{k}|\psi_k|^2.
+\end{equation}
+
+
+Any unitary operator may be written-as
+\begin{equation}\label{12.13}
+\hat{S}=\mathrm{e}^{\mathrm{i}\hat{R}}
+\end{equation}
+where $ \hat{R} $ is an Hermitian operator: since $  \hat{R}^\dag=\hat{R}$ , we have
+\[ \hat{S}^\dag=\mathrm{e}^{-\mathrm{i}\hat{R}^\dag}=\mathrm{e}^{-\mathrm{i}\hat{R}}=\hat{S}^{-1} \]
+The expansion
+\begin{equation}\label{12.14}
+\hat{f}'=\hat{S}^{-1}\hat{f}\hat{S}=\hat{f}+\{\hat{f},\mathrm{i}\hat{R} \}+\frac{1}{2}\{\{\hat{f},\mathrm{i}\hat{R}\}, \mathrm{i}\hat{R}\}+\dots
+\end{equation}
+is easily verified by a direct expansion of the factors $ \exp(\pm\mathrm{i}\hat{R}) $ in powers of $ \hat{R} $. This expansion may be useful when $ \hat{R} $ is proportional to a small parameter, so that \eqref{12.14} becomes an expansion in powers of the parameter.
+\section{The Heisenberg representation of operators
+}\label{The Heisenberg representation of operators
+}
+In the mathematical formalism of quantum mechanics described here, the operators corresponding to various physical quantities act on functions of the coordinates and do not usually depend explicitly on time. The time dependence of the mean values of physical quantities is due only to the time dependence of the wave function of the state, according to the formula
+\begin{equation}\label{13.1}
+\bar{f}(t)=\int\Psi^*(q,t)\hat{f}\Psi(q,t)\mathrm{d}q.
+\end{equation}
+
+The quantum-mechanical treatment can, however, be formulated also in a somewhat different but equivalent form, in which the time dependence is transferred from the wave functions to the operators. Although we shall not use this \textit{Heisenberg representation} (as opposed to the \textit{Schrödinger representation}) of operators in the present volume, a statement of it is given here with a view to applications in the relativistic theory.
+
+We define the operator (which is unitary; see \eqref{12.13})
+\begin{equation}\label{13.2}
+\hat{S}=\exp\left(-\frac{\mathrm{i}}{\hbar}\hat{H}t \right),
+\end{equation}
+where $ \hat{H} $ is the Hamiltonian of the system. By definition, its eigenfunctions are the same as those of the operator $ \hat{H} $, i.e. the stationary-state wave functions $\psi_n(q)$, where
+\begin{equation}\label{13.3}
+\hat{S}\psi_n(q)=\exp(-\frac{\mathrm{i}}{\hbar}E_nt)\psi_n(q).
+\end{equation}
+
+Hence it follows that the expansion \eqref{10.3} of an arbitrary wave function $\Psi$ in terms of the stationary-state wave functions can be written in the operator form
+\begin{equation}\label{13.4}
+\Psi(q,t)=\hat{S}\Psi(q,0),
+\end{equation}
+i.e. the effect of the operator $\hat{S}$ is to convert the wave function of the system at some initial instant into the wave function at an arbitrary instant.
+
+Defining, as in \eqref{12.7}, the time-dependent operator
+\begin{equation}\label{13.5}
+\hat{f}(t)=\hat{S}^{-1}\hat{f}\hat{S}
+\end{equation}
+we have
+\begin{equation}\label{13.6}
+\bar{f}(t)=\int\Psi^*(q,0)\hat{f}(t)\Psi(q,0)\mathrm{d}q,
+\end{equation}
+and thus obtain the formula \eqref{3.8} for the mean value of the quantity $ f $ in a form in which the time dependence is entirely transferred to the operator (for our definition of an operator rests on formula \eqref{3.8}).
+
+It is evident that the matrix elements of the operator \eqref{13.5} with respect to the stationary-state wave functions are the same as the time-dependent matrix elements $ f_{nm}(t) $ defined by formula \eqref{11.3}.
+
+Finally, differentiating the expression \eqref{13.5} with respect to time (assuming that the operators $ \hat{f} $ and $ \hat{H} $ do not themselves involve $ t $), we obtain
+\begin{equation}\label{13.7}
+\frac{\partial}{\partial t}\hat{f}(t)=\frac{\mathrm{i}}{\hbar}\left[\hat{H}\hat{f}(t)-\hat{f}(t)\hat{H} \right],
+\end{equation}
+which is similar in form to \eqref{9.2} but has a somewhat different significance: the expression \eqref{9.2} defines the operator $ \hat{\dot{f}} $ corresponding to the physical quantity $ \dot{f} $, while the left-hand side of equation \eqref{13.7} is the time derivative of the operator of the quantity $ f $ itself.
+\section{The density matrix}\label{The density matrix}
+The description of a system by means of a wave function is the most complete description possible in quantum mechanics, in the sense indicated at the end of \S\ref{The uncertainty principle}.
+
+States that do not allow such a description are encountered if we consider a system that is part of a larger closed system. We suppose that the closed system as a whole is in some state described by the wave function $ \Psi(q, x) $, where $ x $ denotes the set of coordinates of the system considered, and $ q $ the remaining coordinates of the closed system. This function in general does not fall into a product of functions of $ x $ and of $ q $ alone, so that the system does not have its own wave function.\footnote{In order that $ \Psi(q, x) $ should (at a given instant) fall into such a product, the measurement as a result of which this state was brought about must completely describe the system considered and the remainder of the closed system separately. In order that $ \Psi(q, x) $ should continue to have this form at subsequent instants, it is necessary in addition that these parts of the closed system should not interact (see §\ref{The principle of superposition}). Neither of these conditions is now assumed.
+}
+
+Let $ f $ be some physical quantity pertaining to the system considered. Its operator therefore acts only on the coordinates $ x $, and not on $ q $. The mean value of this quantity in the state considered is
+\begin{equation}\label{14.1}
+\bar{f}=\iint\Psi^*(q,x)\hat{f}\Psi(q,x)\mathrm{d}q\mathrm{d}x.
+\end{equation}
+We introduce the function $ \rho(x, x') $ defined by
+\begin{equation}\label{14.2}
+\rho(x, x')=\int\Psi(q,x)\Psi^*(q,x')\mathrm{d}q
+\end{equation}
+where the integration is extended only over the coordinates $ q $; this function is called the \textit{density matrix} of the system. From the definition \eqref{14.2} it is evident that the function is “Hermitian”:
+\begin{equation}\label{14.3}
+\rho^*(x,x')=\rho(x',x)
+\end{equation}
+The “diagonal elements” of the density matrix
+\[ \rho(x,x)=\int|\Psi(q,x)|^2\mathrm{d}q \]
+determine the probability distribution for the coordinates of the system.
+
+Using the density matrix, we can write the mean value f in the form
+\begin{equation}\label{14.4}
+\bar{f}=\int\left[\hat{f}\rho(x,x')_{x'=x}\mathrm{d}x \right]
+\end{equation}
+Here $ \hat{f} $ acts only on the variables $ x $ in the function $ \rho(x, x') $; after calculating the result of its action, we put $ x' = x $. We see that, if we know the density matrix, we can calculate the mean value of any quantity characterizing the system. It follows from this that, by means of $ \rho(x, x') $, we can also determine the probabilities of various values of the physical quantities in the system. Thus the state of a system which does not have a wave function can be described by means of a density matrix. This does not contain the coordinates $ q $ which do not belong to the system concerned, though, of course, it depends essentially on the state of the closed system as a whole.
+
+The description by means of the density matrix is the most general form of quantum-mechanical description of the system. The description by means of the wave function, on the other hand, is a particular case of this, corresponding to a density matrix of the form $ \rho(x, x') = \Psi(x)\Psi^*(x') $. The following important difference exists between this particular case and the general one.\footnote{States having a wave function are called “pure” states, as distinct from “mixed” states, which are described by a density matrix.
+} For a state having a wave function there is always a complete set of measuring processes such that they lead with certainty to definite results (mathematically, this means that $\Psi$ is an eigenfunction of some operator). For states having only a density matrix, on the other hand, there is no complete set of measuring processes whose result can be uniquely predicted.
+
+Let us now suppose that the system is closed, or became so at some instant. Then we can derive an equation giving the change in the density matrix with time, similar to the wave equation for the $\Psi$ function. The derivation can be simplified by noticing that the required linear differential equation for $ \rho(x, x',t) $ must be satisfied in the particular case where the system has a wave function, i.e.
+\[ \rho(x, x',t)=\Psi(x,t)\Psi^*(x,t). \]
+Differentiating with respect to time and using the wave equation \eqref{8.1}, we have
+\begin{align*}
+\mathrm{i}\hbar\frac{\partial\rho}{\partial t}=\mathrm{i}\hbar\Psi^*(x',t)\frac{\partial\Psi(x,t)}{\partial t}&+\mathrm{i}\hbar\Psi(x,t)\frac{\partial\Psi^*(x',t)}{\partial t}=\\
+&=\Psi^*(x',t)\hat{H}\Psi(x,t)-\Psi(x,t)\hat{H}'^*\Psi^*(x',t),
+\end{align*}
+where $ \hat{H} $ is the Hamiltonian of the system, acting on a function of $ x $, and $ \hat{H}' $ is the same operator acting on a function of $ x' $. The functions $ \Psi^*(x', t) $ and $ \Psi(x, t) $ can obviously be placed behind the respective operators $ \hat{H} $ and $ \hat{H}' $, and we thus obtain the required equation:
+\begin{equation}\label{14.5}
+\mathrm{i}\hbar\frac{\partial\rho(x,x',t)}{\partial t}=(\hat{H}-\hat{H}'^*)\rho(x,x',t).
+\end{equation}
+
+
+Let $ \Psi_n(x, t) $ be the wave functions of the stationary states of the system, i.e. the eigenfunctions of its Hamiltonian. We expand the density matrix in terms of these functions; the expansion consists of a double series in the form
+\begin{align}
+\rho(x,x',t)&=\sum_{m}\sum_{n}a_{mn}\Psi_n^*(x',t)\Psi_m(x,t)\notag\\
+&=\sum_{m}\sum_{n}\psi_n^*(x')\psi_m(x)\exp\left(\frac{\mathrm{i}}{\hbar}(E_n-E_m)t \right).\label{14.6}
+\end{align}
+For the density matrix, this expansion plays a part analogous to that of the expansion \eqref{10.3} for wave functions. Instead of the set of coefficients $ a_n $, we have here the double set of coefficients $ a_{mn} $. These clearly have the property of being “Hermitian”, like the density matrix itself:
+\begin{equation}\label{14.7}
+a_{nm}^*=a_{mn}.
+\end{equation}
+For the mean value of some quantity $ f $ we have, substituting \eqref{14.6} in \eqref{14.4},
+\[ \bar{f}=\sum_m\sum_na_{mn}\int\Psi_n^*(x,t)\hat{f}\Psi_m(x,t)\mathrm{d}x, \]
+or
+\begin{equation}\label{14.8}
+\bar{f}=\sum_m\sum_na_{mn}f_{nm}(t)=\sum_m\sum_na_{mn}f_{nm}\exp\left(\frac{\mathrm{i}}{\hbar}(E_n-E_m)t \right),
+\end{equation}
+where $ f_{nm} $ are the matrix elements of the quantity $ f $. This expression is similar to formula \eqref{11.1}.\footnote{The quantities $ a_{mn} $ form the density matrix in the energy representation. The description of the states of a system by means of this matrix was introduced independently by L. Landau and F. Bloch in 1927.
+}
+
+The quantities $ a_{mn} $ must satisfy certain inequalities. The “diagonal elements” $ \rho(x, x) $ of the density matrix, which determine the probability distribution for the coordinates, must obviously be positive quantities. It therefore follows from the expression \eqref{14.6} (with $ x'= x $) that the quadratic form
+\[ \sum_n\sum_ma_{mn}\xi_n^*\xi_m \]
+constructed with the coefficients $ a_{mn} $ (where the $ \xi_n $ are arbitrary complex quantities) must be positive. This places certain conditions, known from the theory of quadratic forms, on the quantities $ a_{nm} $. In particular, all the “diagonal” quantities must clearly be positive:
+\begin{equation}\label{14.9}
+a_{nm}\geqslant0
+\end{equation}
+and any three quantities $ a_{nn} $, $ a_{mm} $ and $ a_{mn} $ must satisfy the inequality
+\begin{equation}\label{14.10}
+a_{nn}a_{mm}\geqslant|a_{mn}|^2
+\end{equation}
+
+
+To the “pure” case, where the density matrix reduces to a product of functions, there evidently corresponds a matrix $ a_{mn} $ of the form
+\begin{equation}\label{14.11}
+a_{mn}=a_ma_n^*.
+\end{equation}
+We shall indicate a simple criterion which enables us to decide, from the form of the matrix $ a_{mn} $, whether we are concerned with a “pure” or a “mixed” state. In the pure case we have
+\[ (a^2)_{mn}=\sum_ka_{mk}a_{kn}=\sum_ka_k^*a_ma_n^*a_k=a_ma_n^*\sum_k|a_k|^2=a_ma_n^*, \]
+or
+\begin{equation}\label{14.12}
+(a^2)_{mn}=a_{mn},
+\end{equation}
+i.e. the density matrix is equal to its own square.
+\section{Momentum}\label{Momentum}
+Let us consider a closed system of particles not in an external field. Since all positions in space of such a system as a whole are equivalent, we can say, in particular, that the Hamiltonian of the system does not vary when the system undergoes a parallel displacement over any distance. It is sufficient that this condition should be fulfilled for an arbitrary small displacement.
+
+An infinitely small parallel displacement over a distance $ \delta \bm{r} $ signifies a transformation under which the radius vectors $ \bm{r}_a $ of all the particles ($ a $ being the number of the particle) receive the same increment $ \delta\bm{r}: \bm{r}_a \rightarrow \bm{r}_a + \delta\bm{r} $. An arbitrary function $ \psi(\bm{r}_1, \bm{r}_2,\dots) $ of the coordinates of the particles, under such a transformation, becomes the function
+\begin{align*}
+\psi(\bm{r}_1+\delta\bm{r},\bm{r_2}+\delta\bm{r},\dots)&=\psi(\bm{r}_1,\bm{r}_2,\dots)+\delta\bm{r}\cdot\sum_{a}\nabla_a\psi\\
+&=(1+\delta\bm{r}\cdot\nabla_a)\psi(\bm{r}_1,\bm{r}_2,\dots)
+\end{align*}
+($ \nabla_a $ denotes the operator of differentiation with respect to $ \bm{r}_a $). The expression
+\[ 1+\delta\bm{r}\cdot\nabla_a \]
+is the operator of an infinitely small displacement, which converts the function $ \psi(\bm{r}_1, \bm{r}_2,\dots) $ into the function
+\[ \psi(\bm{r}_1+\delta\bm{r},\bm{r}_2+\delta\bm{r},\dots). \]
+
+The statement that some transformation does not change the Hamiltonian means that, if we make this transformation on the function $ \hat{H}\psi $, the result is the same as if we make it only on the function $\psi$ and then apply the operator $\hat{H}$. Mathematically, this can be written as follows. Let $\hat{Ô}$ be the operator which effects the transformation in question. Then we have $ \hat{O}(\hat{H}\psi)=\hat{H}(\hat{O}\psi) $, whence
+\[ \hat{O}\hat{H}-\hat{H}\hat{O}=0 \]
+i.e. the Hamiltonian must commute with the operator $\hat{O}$.
+
+In the case considered, the operator $\hat{O}$ is the operator of an infinitely small displacement. Since the unit operator (the operator of multiplying by unity) commutes, of course, with any operator, and the constant factor $ \delta\bm{r} $ can be taken in front of $\hat{H}$, the condition $ \hat{O}\hat{H}-\hat{H}\hat{O}=0 $ reduces here to
+\begin{equation}\label{15.1}
+\left(\sum_a\nabla_a \right)\hat{H}-\hat{H}\left(\sum_a\nabla_a \right)=0
+\end{equation}
+
+
+As we know, the commutability of an operator (not containing the time explicitly) with $\hat{H}$ means that the physical quantity corresponding to that operator is conserved. The quantity whose conservation for a closed system follows from the homogeneity of space is the momentum of the system (cf. Mechanics, \S7). Thus the relation \eqref{15.1} expresses the law of conservation of momentum in quantum mechanics; the operator $ \sum_a\nabla_a $ must correspond, apart from a constant factor, to the total momentum of the system, and each term $ \nabla_a $ of the sum to the momentum of an individual particle.
+
+The coefficient of proportionality between the operator $ \hat{\bm{p}} $ of the momentum of a particle and the operator $\nabla$ can be determined by means of the passage to the limit of classical mechanics, and is $ -\mathrm{i}\hbar $:
+\begin{equation}\label{15.2}
+\hat{\bm{p}}=-\mathrm{i}\hbar\nabla
+\end{equation}
+or, in components,
+\[ \hat{p}_x=-\mathrm{i}\hbar\frac{\partial}{\partial x},\quad\hat{p}_y=-\mathrm{i}\hbar\frac{\partial}{\partial y},\quad\hat{p}_z=-\mathrm{i}\hbar\frac{\partial}{\partial z} \]
+Using the limiting expression \eqref{6.1} for the wave function, we have
+\[ \hat{\bm{p}}=\i\h\frac{\i}{\h}\Psi\nabla\bm{S}=\Psi\nabla\bm{S} \]
+i.e. in the classical approximation the effect of the operator reduces to multiplication by $ \nabla\bm{S} $. The gradient $ \nabla\bm{S} $ of the action is the classical momentum $ p $ of the particle (see Mechanics, \S43).
+
+It is easy to see that the operator \eqref{15.2} is Hermitian, as it should be. For, with arbitrary functions $ \psi(x) $ and $ \phi(x) $ which vanish at infinity, we have
+\[ \int\phi\hat{p}_x\psi\d x=-\i\h\int\phi\frac{\p\psi}{\p x}\d x=\i\h\int\psi\frac{\p \phi}{\p x}\d x=\int\psi\hat{p}_x^*\phi\d x, \]
+and this is the condition that the operator should be Hermitian.
+
+Since the result of differentiating functions with respect to two different variables is independent of the order of differentiation, it is clear that the operators of the three components of momentum commute with one another:
+\begin{equation}\label{15.3}
+\hat{p}_x\hat{p}_y-\hat{p}_y\hat{p}_x=0,\quad\hat{p}_x\hat{p}_z-\hat{p}_z\hat{p}_x=0\quad\hat{p}_y\hat{p}_z-\hat{p}_z\hat{p}_y=0
+\end{equation}
+This means that all three components of the momentum of a particle can simultaneously have definite values.
+
+Let us find the eigenfunctions and eigenvalues of the momentum operators. They are determined by the vector equation
+\begin{equation}\label{15.4}
+\i\h\nabla\psi=\bm{p}\psi
+\end{equation}
+The solutions are of the form
+\begin{equation}\label{15.5}
+\psi=\mathrm{C}\cdot\e^{\i \bm{p}\bm{r}/\h}
+\end{equation}
+where $ \mathrm{C} $ is a constant. If all three components of the momentum are given simultaneously, we see that this completely determines the wave function of the particle. In other words, the quantities $ p_x,p_y,p_z $ form one of the possible complete sets of physical quantities for a particle. Their eigenvalues form a continuous spectrum extending from $ -\infty $ to $ +\infty $.
+
+According to the rule \eqref{5.4} for normalizing the eigenfunctions of a continuous spectrum, the integral $ \int \psi_{\bm{p}'}^*\psi_{\bm{p}}\d V $ taken over all space ($ \d V = \d x \d y \d z $) must be equal to the delta function $ \delta(\bm{p}'-\bm{p}) $.\footnote{The three-dimensional function $  \delta(\bm{a}) $ of a vector $ \bm{a} $ is defined as a product of delta functions of the components of the vector $ \bm{a} $: $ \delta(\bm{a}) = \delta(a_x)\delta(a_y)\delta(a_z) $.
+} However, for reasons that will become clear from subsequent applications, it is more natural to normalize the eigenfunctions of the particle momentum by the delta function of the momentum difference divided by $ 2\pi\h $:
+\[ \int\psi_{\bm{p}'}^*\psi_{\bm{p}}\d V=\left( \frac{\bm{p}'-\bm{p}}{2\pi\h}\right) \]
+or, equivalently,
+\begin{equation}\label{15.6}
+\int\psi_{\bm{p}'}^*\psi_{\bm{p}}\d V=(2\pi\h)^3\delta(\bm{p}'-\bm{p})
+\end{equation}
+(since each of the three factors in the three-dimensional delta function is $ \delta[(p_x'- p_x)/2\pi\h]  = 2\pi\h \delta(p_x'−p_x)$, and so on).
+
+The integration is effected by means of the formula\footnote{The conventional meaning of this formula is that the function on the left-hand side has the property \eqref{5.8} of the delta function. Substituting $ \delta(x-a) $ in the form \eqref{15.7}, we obtain from \eqref{5.8} the well-known Fourier integral formula
+	\[ f(a)=\iint_{-\infty}^{\infty}f(x)\e^{\i\xi(x-a)}\d x\frac{\d\xi}{2\pi} \]
+}
+\begin{equation}\label{15.7}
+\frac{1}{2\pi}\int_{-\infty}^{+\infty}\e^{\i \alpha\xi}\d\xi=\delta(\alpha)
+\end{equation}
+This shows that the constant in \eqref{15.5} is equal to unity if the normalization is according to \eqref{15.6}:\footnote{Note that with this normalization the probability density  $ |\Psi|^2=1 $, i.e. the function is normalised to “one particle per unit volume”. This agreement of normalizations is, of course, no accident; see the last footnote to \S48.
+}
+\begin{equation}\label{15.8}
+\psi_{\bm{p}}=\e^{\i\bm{p}\bm{r}/\h}
+\end{equation}
+
+The expansion of an arbitrary wave function $ \psi(\bm{r}) $ of a particle in terms of the eigenfunctions $ \psi_{\bm{p}} $ of its momentum operator is simply the expansion as a Fourier integral:
+\begin{equation}\label{15.9}
+\psi(\bm{r})=\int a(\bm{p})\psi_{\bm{p}}(\bm{r})\frac{\d^3p}{(2\pi\h)^3}=\int a(\bm{p})\e^{\i \bm{p}\cdot\bm{r}/\h}\frac{\d^3p}{(2\pi\h)^3}
+\end{equation}
+(where $ \d^3p=\d p_x\d p_y\d p_z $). The expansion coefficients $ a(\bm{p}) $ are, according to formula \eqref{5.3},
+\begin{equation}\label{15.10}
+a(\bm{p})=\int\psi(\bm{r})\psi_{\bm{p}}^*(\bm{r})\d V=\int\psi(\bm{r})\e^{-\i\bm{p}\cdot\bm{r}/\h}\d V
+\end{equation}
+The function $ a(\bm{p}) $ can be regarded (see \S\ref{The continuous spectrum}) as the wave function of the particle in the “momentum representation”; 
+\[ |a (\bm{p})|^2 \frac{\d^3p}{(2\pi\h)^3} \]
+is the probability that the momentum has a value in the interval $ \d^3p $.
+
+Just as the operator $ \hat{\bm{p}} $ corresponds to the momentum, determining its eigenfunctions in the coordinate representation, we can introduce the operator $ \hat{\bm{r}} $ of the coordinates of the particle in the momentum representation. It must be defined so that the mean value of the coordinates can be represented in the form
+\begin{equation}\label{15.11}
+\bar{\bm{r}}=\int a^*(\bm{p})\hat{\bm{r}}a(\bm{p})\frac{\d^3p}{(2\pi\h)^3}
+\end{equation}
+On the other hand, this mean value is determined from the wave function $ \psi(\bm{r}) $ by
+\[ \bar{\bm{r}}=\int\psi^*\bm{r}\psi\d V. \]
+Substituting $ \psi(\bm{r}) $ in the form \eqref{15.9} we have (integrating by parts)
+\[ \bm{r}\psi(\bm{r})=\int\bm{r}a(\bm{p})\e^{\i\bm{p}\cdot\bm{r}/\h}\frac{\d^3p}{(2\pi\h)^3}=\int\i\h\e^{\i\bm{p}\cdot\bm{r}/\h}\frac{\p a(\bm{p})}{\p \bm{p}}\frac{\d^3 p}{(2\pi\h)^3} \]
+Using this expression and \eqref{15.10}, we find
+\[ \bar{\bm{r}}=\iint\psi^*(\bm{r})\i\h\frac{\p a(\bm{p})}{\p \bm{p}}\e^{\i\bm{p}\cdot\bm{r}/\h}\d V\frac{\d^3 p}{(2\pi\h)^3}=\int\i\h a^*(\bm{p})\frac{\p a(\bm{p})}{\p \bm{p}}\frac{\d^3 p}{(2\pi\h)^3} \]
+Comparing with \eqref{15.11}, we see that the radius vector operator in the momentum representation is
+\begin{equation}\label{15.12}
+\hat{\bm{r}}=\i\h\frac{\p}{\p \bm{p}}
+\end{equation}
+The momentum operator in this representation reduces simply to multiplication by $ \bm{p} $.
+
+Finally, we shall express in terms of $ \hat{\bm{p}} $ the operator of a parallel displacement in space over any finite (not only infinitesimal) distance $ \bm{a} $. By the definition of this operator $(\hat{T}_{\bm{a}})$ we must have
+\[ \hat{T}_{\bm{a}}\psi(\bm{r})=\psi(\bm{r}+\bm{a}). \]
+Expanding the function $ \psi(\bm{r}+\bm{a}) $ in a Taylor series, we have
+\[ \psi(\bm{r}+\bm{a})=\psi(\bm{r})+\bm{a}\cdot\frac{\p\psi(\bm{r})}{\p\bm{r}}+\dots, \]
+or, introducing the operator $ \hat{\bm{p}}=\i\h\nabla $,
+\[ \psi(\bm{r}+\bm{a})=\left[   1+\frac{\i}{\h}\bm{a}\cdot\hat{\bm{p}}+\frac{1}{2}\left( \frac{\i}{\h}\bm{a}\cdot\hat{\bm{p}}\right)^2+\dots \right]\psi(\bm{r}). \]
+The expression in brackets is the operator
+\begin{equation}\label{15.13}
+\hat{T}_{\bm{a}}=\exp\left(\frac{\i}{\h}\bm{a}\cdot\hat{\bm{p}}\right)
+\end{equation}
+This is the required operator of the \textit{finite displacement}.
+\section{Uncertainty relations}\label{Uncertainty relations}
+Let us derive the rules for commutation between momentum and coordinate operators. Since the result of successively differentiating with respect to one of the variables $ x, y, z $ and multiplying by another of them does not depend on the order of these operations, we have
+\begin{equation}\label{16.1}
+\hat{p}_xy-y\hat{p}_x=0,\quad\hat{p}_xz-z\hat{p}_x=0
+\end{equation}
+and similarly for $ \hat{p}_y,\hat{p}_z $.
+
+To derive the commutation rule for $\hat{p}_x$ and $ x $, we write
+\[ (\hat{p}_xx-x\hat{p}_x)\psi=-\i\h\frac{\p }{\p x}(x\psi)+\i\h x\frac{\p\psi}{\p x}=\i\h\psi \]
+We see that the result of the action of the operator $ \hat{p}_xx-x\hat{p}_x $ reduces to multiplication by $ −\i\h $; the same is true, of course, of the commutation of $ \hat{p}_y $ with $ y $ and $ \hat{p}_z $ with $ z $. Thus we have\footnote{These relations, discovered in matrix form by Heisenberg in 1925, formed the genesis of quantum mechanics.
+}
+\begin{equation}\label{16.2}
+\hat{p}_x-x\hat{p}_x=-\i\h,\qquad\hat{p}_y-y\hat{p}=-\i\h,\qquad\hat{p}_xx-x\hat{p}_x=-\i\h
+\end{equation}
+All the relations \eqref{16.1} and \eqref{16.2} can be written jointly in the form
+\begin{equation}\label{16.3}
+\hat{p}_ix_k-x_k\hat{p}_i=-\i\h\delta_{ik},\qquad(i,k=x,y,z)
+\end{equation}
+
+
+Before going on to examine the physical significance of these relations and their consequences, we shall set down two formulae which will be useful later. Let $ f (\bm{r}) $ be some function of the coordinates. Then
+\begin{equation}\label{16.4}
+\hat{\bm{p}}f(\bm{r})-f(\bm{r})\hat{\bm{p}}=-\i\h\nabla f
+\end{equation}
+For
+\[ (\hat{\bm{p}}f-f\hat{\bm{p}})\psi=-\i\h[\nabla(f\psi)-f\nabla\psi]=-\i\h\psi\nabla f \]
+A similar relation holds for the commutator of $ \bm{r} $ with a function of the momentum operator:
+\begin{equation}\label{16.5}
+f(\hat{\bm{p}})\bm{r}-\bm{r}f(\hat{\bm{p}})=-\i\h\frac{\p f}{\p\bm{p}}
+\end{equation}
+It can be derived in the same way as \eqref{16.4} if we calculate in the momentum representation, using the expression \eqref{15.12} for the coordinate operators.
+
+The relations \eqref{16.1} and \eqref{16.2} show that the coordinate of a particle along one of the axes can have a definite value at the same time as the components of the momentum along the other two axes; the coordinate and momentum component along the same axis, however, cannot exist simultaneously. In particular, the particle cannot be at a definite point in space and at the same time have a definite momentum $ \bm{p} $.
+
+Let us suppose that the particle is in some finite region of space, whose dimensions along the three axes are (of the order of magnitude of) $\Delta x$, $ \Delta y $, $ \Delta z $. Also, let the mean value of the momentum of the particle be $ \bm{p}_0 $. Mathematically, this means that the wave function has the form $ \psi = u(\bm{r})\e^{\i\bm{p}_0\bm{r}/\h} $, where $ u (\bm{r}) $ is a function which differs considerably from zero only in the region of space concerned. We expand the function $\psi$ in terms of the eigenfunctions of the momentum operator (i.e. as a Fourier integral). The coefficients $ a (\bm{p}) $ in this expansion are determined by the integrals \eqref{15.10} of functions of the form $ u(\bm{r})\e^{\i(\bm{p}_0-\bm{p})\bm{r}/\h} $. If this integral is to differ considerably from zero, the periods of the oscillatory factor $ \e^{\i(\bm{p}_0-\bm{p})\bm{r}/\h} $ must not be small in comparison with the dimensions $\Delta x$, $ \Delta y $, $ \Delta z $ of the region in which the function $ u(\bm{r}) $ is different from zero. This means that $ a (\bm{p}) $ will be considerably different from zero only for values of $ \bm{p} $ such that $ ({p_{0}}_x-p_x)\Delta x/\h \lesssim 1 $, etc. Since $ |a(\bm{p})|^2 $ determines the probability of the various values of the momentum, the ranges of values of $ p_x, p_y, p_z $ in which $ a(\bm{p}) $ differs from zero are just those in which the components of the momentum of the particle may be found, in the state considered. Denoting these ranges by $ \Delta p_x$, $\Delta p_y$, $\Delta p_z$, we thus have
+\begin{equation}\label{16.6}
+\Delta p_x\Delta x\sim\h,\qquad\Delta p_y\Delta y\sim\h,\qquad\Delta p_z\Delta z\sim\h
+\end{equation}
+These relations, known as the \textit{uncertainty relations}, were obtained by Heisenberg in 1927.
+
+We see that, the greater the accuracy with which the coordinate of the particle is known (i.e. the less $ \Delta x $), the greater the uncertainty $ \Delta p_x $ in the component of the momentum along the same axis, and \textit{vice versa}. In particular, if the particle is at some completely definite point in space ($ \Delta x = \Delta y = \Delta z = 0 $), then $ \Delta p_x =\Delta p_y = \Delta p_z =\infty $. This means that all values of the momentum are equally probable. Conversely, if the particle has a completely definite momentum $ \bm{p} $, then all positions of it in space are equally probable (this is seen directly from the wave function \eqref{15.8}, whose squared modulus is quite independent of the coordinates).
+
+If the uncertainties of the coordinates and momenta are specified by the standard deviations
+\[ \delta x=\sqrt{\bar{(x-\bar{x})^2}},\quad\delta p_x =\sqrt{\bar{(x-\bar{x})^2}},\]
+we can specify exactly the least possible value of their product (H. Weyl). Let us consider the one-dimensional case of a wave packet with wave function $ \psi(x) $ depending on only one coordinate, and assume for simplicity that the mean values of $ x $ and $ p_x $ in this state are zero. We consider the obvious inequality
+\[ \int_{-\infty}^{\infty}\left\vert\alpha x\psi+\frac{\d\psi}{\d x}\right\vert^2\d x\geqslant0 \]
+where $ \alpha $ is an arbitrary real constant. On calculating this integral, noticing that
+\[ \int_{-\infty}^{\infty}x^2|\psi|^2\d x=(\delta x)^2, \]
+\[ \int\left(x\frac{\d \psi^*}{\d x}\psi+x\psi^*\frac{\d\psi}{\d x} \right)\d x=\int x\frac{\d |\psi|^2}{\d x}\d x=-\int|\psi|^2\d x=-1, \]
+\[ \int\frac{\d\psi^*}{\d x}\frac{\d \psi}{\d x}\d x=-\int\psi^*\frac{\d^2\psi}{\d x^2}\d x=\frac{1}{\h^2}\int\psi^*\hat{p}_x^2\psi\d x=\frac{1}{\h^2}(\delta p_x)^2, \]
+we obtain
+\[ \alpha^2(\delta x)^2-\alpha+\frac{(\delta p_x)^2}{\h^2}\geqslant0 \]
+If this quadratic (in $ \alpha $) trinomial is positive for all $ \alpha $, its discriminant must be negative, which gives the inequality
+\begin{equation}\label{16.7}
+\delta x\delta p_x\geqslant0
+\end{equation}
+The least possible value of the product is $ \h/2 $, and occurs for wave packets with wave functions of the form
+\begin{equation}\label{16.8}
+\psi=\frac{1}{(2\pi)^{1/4}\sqrt{\delta x}}\exp\left(\frac{\i}{\h}p_0x-\frac{x^2}{4(\delta x)^2} \right)
+\end{equation}
+where $ p_0 $ and $ \delta x $ are constants. The probabilities of the various values of the coordinates in such a state are
+\[ |\psi|^2=\frac{1}{\sqrt{2\pi}\delta x}\exp\left(-\frac{x^2}{2(\delta x)^2}\right) \]
+and thus have a Gaussian distribution about the origin (the mean value $ \bar{x}=0 $) with standard deviation $ \delta x $. The wave function in the momentum representation is
+\[ a(p_x)=\int_{-\infty}^{\infty}\psi(x)\exp\left(-\i\frac{p_x x}{\h} \right)\d x \]
+Calculation of the integral gives
+\[ a(p_x)=\mathrm{const}\cdot\exp\left( -\frac{(\delta x)^2(p_x-p_0)^2}{\h^2} \right). \]
+The distribution of probabilities of values of the momentum, $ |a(p_x)|^2 $, is also Gaussian about the mean value $ \bar{p_x}=p_0 $, with standard deviation $ \delta p_x = \h/2\delta x $, so that the product $ \delta p_x\delta x $ is indeed $ \h/2 $.
+
+Finally, we shall derive another useful relation. Let $ f $ and $ g $ be two physical quantities whose operators obey the commutation rule
+\begin{equation}\label{16.9}
+\hat{f}\hat{g}-\hat{g}\hat{f}=-\i\h\hat{c}
+\end{equation}
+where $\hat{c}$ is the operator of some physical quantity $ c $. On the right-hand side of the equation the factor $ \h $ is introduced in accordance with the fact that in the classical limit (i.e. as $ \h \rightarrow 0 $) all operators of physical quantities reduce to multiplication by these quantities and commute with one another. Thus, in the “quasi-classical” case, we can, to a first approximation, regard the right-hand side of equation \eqref{16.9} as being zero. In the next approximation, the operator ε can be replaced by the operator of simple multiplication by the quantity $ c $. We then have
+\[ \hat{f}\hat{g}-\hat{g}\hat{f}=-\i\h c. \]
+This equation is exactly analogous to the relation $ \hat{p}_xx-x\hat{p}_x=-\i\h $, the only difference being that, instead of the constant $ \h $, we have\footnote{The classical quantity $ c $ is the Poisson bracket of the quantities $ f $ and $ g $; see the footnote in \S\ref{The differentiation of operators with respect to time}.} the quantity $ \h c $. We can therefore conclude, by analogy with the relation $ \Delta x\Delta p_x \sim \h $, that in the quasi-classical case there is an uncertainty relation
+\begin{equation}\label{16.10}
+\Delta f\Delta g\sim\h c
+\end{equation}
+for the quantities $ f $ and $ g $.
+
+In particular, if one of these quantities is the energy($ \hat{f}\equiv\hat{H} $) and the operator ($ \hat{g} $) of the other does not depend explicitly on the time, then by \ref{9.2} $ c = \dot{g} $, and the uncertainty relation in the quasi-classical case is
+\begin{equation}\label{16.11}
+\Delta E\Delta g\sim\h\dot{g}.
+\end{equation}

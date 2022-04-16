@@ -1,0 +1,981 @@
+\chapter{PERTURBATION THEORY}\label{PERTURBATION THEORY}
+\section{Perturbations independent of time}\label{Perturbations independent of time}
+THE exact solution of Schr\"odinger’s equation can be found only in a comparatively small number of the simplest cases. The majority of problems in quantum mechanics lead to equations which are too complex to be solved exactly. Often, however, quantities of different orders of magnitude appear in the conditions of the problem; among them there may be small quantities such that, when they are neglected, the problem is so much simplified that its exact solution becomes possible. In such cases, the first step in solving the physical problem concerned is to solve exactly the simplified problem, and the second step is to calculate approximately the errors due to the small terms that have been neglected in the simplified problem. There is a general method, of calculating these errors; it is called \textit{perturbation theory}.
+
+Let us suppose that the Hamiltonian of a given physical system is of the form
+\[ \hat{H}=\hat{H}_0+\hat{V} \]
+where $\hat{V}$ is a small correction (or \textit{perturbation}) to the \textit{unperturbed} operator $\hat{H}_0$ In \S\S\ref{Perturbations depending on time}, \ref{The secular equation} we shall consider perturbations $\hat{V}$ which do not depend explicitly on time (the same is assumed regarding $\hat{H}_0$ also). The conditions which are necessary for it to be permissible to regard the operator $\hat{V}$ as “small” compared with the operator $\hat{H}$ will be derived below.
+
+The problem of perturbation theory for a discrete spectrum can be formulated as follows. It is assumed that the eigenfunctions $\psi_n^{(0)}$ and eigenvalues $ E_n^{(0)} $ of the discrete spectrum of the unperturbed operator $\hat{H}_0$ are known, i.e. the exact solutions of the equation
+\begin{equation}\label{38.1}
+\hat{H}_0\psi^{(0)}=E^{(0)}\psi^{(0)}
+\end{equation}
+are known. It is desired to find approximate solutions of the equation
+\begin{equation}\label{38.2}
+\hat{H}\psi=(\hat{H}_0+\hat{V})\psi=E\psi,
+\end{equation}
+i.e. approximate expressions for the eigenfunctions $\psi_n$ and eigenvalues $ E_n $ of the perturbed operator $\hat{H}$.
+
+In this section we shall assume that no eigenvalue of the operator $ \hat{H}_0 $ is degenerate. Moreover, to simplify our results, we shall at first suppose that there is only a discrete spectrum of energy levels.
+
+The calculations are conveniently performed in matrix form throughout.
+
+To do this, we expand the required function $\psi$ in terms of the functions $ \psi_n^{(0)} $:
+\begin{equation}\label{38.3}
+\psi=\sum_mc_m\psi_m^{(0)},
+\end{equation}
+Substituting this expansion in \eqref{38.2} we obtain
+\[ \sum_mc_m(E_m^{(0)}+\hat{V})\psi_m^{(0)}=\sum_mc_mE\psi_m^{(0)}; \]
+multiplying both sides of this equation by $\psi_k^{(0)*}$ and integrating, we find
+\begin{equation}\label{38.4}
+(E-E_k^{(0)})c_k=\sum_mV_{km}c_m.
+\end{equation}
+
+
+Here we have introduced the matrix $ V_{km} $ of the perturbation operator $\hat{V}$, defined with respect to the unperturbed functions $\psi_m^{(0)}$:
+\begin{equation}\label{38.5}
+V_{km}=\int\psi_k^{(0)*}\hat{V}\psi_m^{(0)}\d q.
+\end{equation}
+
+
+We shall seek the values of the coefficients $ c_m $ and the energy $ E $ in the form of series
+\[ E=E^{(0)}+E^{(1)}+\dots,\quad c_m=c_m^{(0)}+c_m^{(1)}+c_m^{(2)}+\dots, \]
+where the quantities $ E^{(1)} $ and $ c_m^{(1)} $ are of the same order of smallness as the perturbation $\hat{V}$, the quantities $ E^{(2)} $ and $ c_m^{(2)} $ are of the second order of smallness, and so on.
+
+Let us determine the corrections to the $ n $th eigenvalue and eigenfunction, putting accordingly $ c_n^{(0)} = 1 $, $ c_n^{(0)} = 0 $ for $ m \neq n $. To find the first approximation, we substitute in equation \eqref{38.4} $ E = E_n^{(0)} + E_n^{(1)} $, $ c_k = c_k^{(0)}+c_k^{(1)} $, and retain only terms of the first order. The equation with $ k = n $ gives
+\begin{equation}\label{38.6}
+E_n^{(1)}=V_{nn}=\int\psi_n^{(0)*}\hat{V}\psi_n^{(0)}\d q.
+\end{equation}
+Thus the first-order correction to the eigenvalue $ E_n^{(0)} $ is equal to the mean value of the perturbation in the state $  \psi_n^{(0)} $.
+
+The equation \eqref{38.4} with $ k \ne n $ gives
+\begin{equation}\label{38.7}
+c_k^{(1)}=\frac{V_{kn}}{E_n^{(0)}-E_k^{(0)}},k\ne n,
+\end{equation}
+while $ c_n^{(1)} $ remains arbitrary; it must be chosen so that the function $ \psi_n = \psi_n^{(0)} + \psi_n^{(1)} $ is normalized up to and including terms of the first order. For this we must put $ c_n^{(1)} = 0 $. For the functions
+\begin{equation}\label{38.8}
+\psi_n^{(1)}={\sum_{m}}'\frac{V_{mn}}{E_n^{(0)}-E_m^{(0)}}\psi_m^{(0)}
+\end{equation}
+(the prime means that the term with $ m = n $ is omitted from the sum) are orthogonal to $\psi_n^0$, and hence the integral of $ |\psi_n^{(0)}+\psi_n^{(1)}|^2 $ differs from unity only by a quantity of the second order of smallness.
+
+Formula \eqref{38.8} determines the correction to the wave functions in the first approximation. Incidentally, we see from this formula the condition for the applicability of the above method. This condition is that the inequality
+\begin{equation}\label{38.9}
+|V_{mn}|\ll|E_n^{(0)}-E_m^{(0)}|
+\end{equation}
+must hold, i.e. the matrix elements of the perturbation must be small compared with the corresponding differences between the unperturbed energy levels.
+
+Next, let us determine the correction to the eigenvalue $ E_n^{(0)} $ in the second approximation. To do this, we substitute in \eqref{38.4} $ E = E_n^{(0)}+E_n^{(1)}+E_n^{(2)} $, $ c_k = c_k^{(0)}+c_k^{(1)}+c_k^{(2)} $, and examine the terms of the second order of smallness. The equation with $ k = n $ gives
+\[ E_n^{(2)}c_n^0={\sum_m}'V_{nm}c_m^{(1)}, \]
+whence
+\begin{equation}\label{38.10}
+E_n^{(2)}={\sum_m}'\frac{|V_{mn}|^2}{E_n^{(0)}-E_m^{(0)}}
+\end{equation}
+(we have substituted $ c_m^{(1)} $ from \eqref{38.7}, and used the fact that, since the operator $\hat{V}$ is Hermitian, $ V_{mn} = V_{nm}^* $).
+
+We notice that the correction in the second approximation to the energy of the normal state is always negative; for, since $ E_n^{(0)} $ then corresponds to the lowest value of the energy, all the terms in the sum \eqref{38.10} are negative.
+
+The further approximations can be calculated in a similar manner.
+
+The results obtained can be generalized at once to the case where the operator $ \hat{H}_0 $ has also a continuous spectrum (but the perturbation is applied, as before, to a state of the discrete spectrum). To do so, we need only add to the sums over the discrete spectrum the corresponding integrals over the continuous spectrum. We shall distinguish the various states of the continuous spectrum by the suffix $ \nu $, which takes a continuous range of values; by $ \nu $ we conventionally understand an assembly of values of quantities sufficient for a complete description of the state (if the states of the continuous spectrum are degenerate, which is almost always the case, the value of the energy alone does not suffice to determine the state).\footnote{Here the wave functions $ \psi_\nu^{(0)} $ must be normalized by delta functions of the quantities $\nu$.
+} Then, for instance, we must write instead of \eqref{38.8}
+\begin{equation}\label{38.11}
+\psi_n^{(1)}={\sum_m}'\frac{V_{mn}}{E_n^{(0)}-E_m^{(0)}}\psi_m^{(0)}+\int\frac{V_{\nu n}}{E_n^{(0)}-E_\nu}\psi_\nu^{(0)}\d\nu
+\end{equation}
+and similarly for the other formulae.
+
+It is useful to note also the formula for the perturbed value of the matrix element of a physical quantity $ f $, calculated as far as terms of the first order by using the functions $ \psi_n = \psi_n^{(0)} + \psi_n^{(1)} $, with $ \psi_n^{(1)} $ given by \eqref{38.8}. The following expression is easily obtained:
+\begin{equation}\label{38.12}
+f_{nm}=f_{nm}^{(0)}+{\sum_k}'\frac{V_{nk}f_{km}^{(0)}}{E_n^{(0)}-E_k^{(0)}}+{\sum_k}'\frac{V_{km}f_{nk}^{(0)}}{E_m^{(0)}-E_k^{(0)}}
+\end{equation}
+In the first sum $ k \ne n $, while in the second $ k \ne m $.
+
+
+
+
+
+{\small
+\textbf{PROBLEMS}
+
+
+\textbf{1.} Determine the correction $ \psi_n^{(2)} $ in the second approximation to the eigenfunctions.
+
+
+
+
+
+SOLUTION. The coefficients $ c_k^{(2)} (k \ne n) $ are calculated from equations \eqref{38.4} with $ k \ne n $, written out up to terms of the second order, and the coefficient $ c_n^{(2)} $ is chosen so that the function $ \psi_n = \psi_n^{(0)} + \psi_n^{(1)} + \psi_n^{(2)} $ is normalized up to terms of the second order. As a result we find
+\[ \psi_n^{(2)}={\sum_m}'{\sum_k}'\frac{V_{mk}V_{kn}}{\h^2\omega_{nk}\omega_{nm}}\psi_m^{(0)}-{\sum_m}'\frac{V_{nn}V_{mn}}{\h^2\omega_{nm}^2}\psi_m^{(0)}-\frac{\psi_n^{(0)}}{2}{\sum_m}'\frac{|V_{mn}|^2}{\h^2\omega_{nm}^2}, \]
+where we have introduced the frequencies
+\[ \omega_{nm}=\frac{1}{\h}(E_n^{(0)}-E_m^{(0)}). \]
+
+
+
+
+\textbf{2.} Determine the correction in the third approximation to the eigenvalues of the energy
+
+
+
+
+
+SOLUTION. Writing out the terms of the third order of smallness in equation \eqref{38.4} with $ k = n $, we obtain
+\[ E_n^{(3)}={\sum_k}'{\sum_m}'\frac{V_{nm}V_{mk}V_{kn}}{\h^2\omega_{mn}\omega_{kn}}-V_{nn}{\sum_m}'\frac{|V_{nm}|^2}{\h^2\omega_{mn}^2}. \]
+
+
+
+
+\textbf{3.} Determine the energy levels of an anharmonic linear oscillator whose Hamiltonian is
+\[ \hat{H}=\frac{\hat{p}^2}{2m}+\frac{m\omega^2x^2}{2}+\alpha x^3+\beta x^4. \]
+
+
+
+
+SOLUTION. The matrix elements of $ x^3 $ and $ ^x4 $ can be obtained directly according to the rule of matrix multiplication, using the expression \eqref{23.4} for the matrix elements of $ x $. We find for the matrix elements of $ x^3 $ that are not zero
+\begin{equation*}
+\begin{split}
+\left(x^3\right)_{n-3,n}&=\left(x^3\right)_{n,n-3}=\left(\frac{\h}{m\omega}\right)^{3/2}\sqrt{\frac{n(n-1)(n-2)}{8}},\\
+\left(x^3\right)_{n-1,n}&=\left(x^3 \right)_{n,n-1}=\left(\frac{\h}{m\omega}\right)^{3/2}\sqrt{\frac{9n^3}{8}}.
+\end{split}
+\end{equation*}
+The diagonal elements in this matrix vanish, so that the correction in the first approximation due to the term $ \alpha x^3 $ in the Hamiltonian (regarded as a perturbation of the harmonic oscillator) is zero. The correction in the second approximation due to this term is of the same order as that in the first approximation due to the term $ \beta x^4 $. The diagonal matrix elements of $ x^4 $ are
+\[ \left(x^4 \right)_{n,n}=\left(\frac{\h}{m\omega} \right)^2\cdot\frac{3}{4}(2n^2+2n+1). \]
+Using the general formulae \eqref{38.6} and \eqref{38.10}, we find the following approximate expression for the energy levels of the anharmonic oscillator:
+\[ E_n=\h\omega\left(n+\frac{1}{2} \right)-\frac{15}{4}\frac{\alpha^2}{\h\omega}\left(\frac{\h}{m\omega} \right)^3\left(n^2+n+\frac{11}{30} \right)+\frac{3}{2}\beta\left(\frac{\h}{m\omega} \right)^2\left(n^2+n+\frac{1}{2} \right). \]
+
+
+
+
+\textbf{4.} A spherical potential well with infinitely high walls is subjected to a small deformation (without change of volume) which gives it the form of a slightly prolate or oblate spheroid with semi-axes $ a = b $ and $ c $. Find the splitting of the energy levels of a particle in the deformed well (A. B. Migdal 1959).
+
+
+
+
+
+SOLUTION. The equation of the well boundary is
+\[ \frac{x^2+y^2}{a^2}+\frac{z^2}{c^2}=1 \]
+and by the change of variables $ x \to ax/R, y \to ay/R, z \to cz/R $ it is converted into $ x^2+y^2+z^2 = R^2 $ the equation of a sphere with radius $ R $. The same change of variables converts the Hamiltonian of the particle, $ \hat{H}=\hat{\bm{p}}^2/2M=-\h^2\Delta/2M $ (where $ M $ is the mass of the particle and the energy is measured from the bottom of the well) into $ \hat{H}=\hat{H}_0+\hat{V} $, where
+\[ \hat{H}_0=-\frac{\h^2}{2M}\Delta,\quad\hat{V}=-\frac{\h^2}{2M}\left[\left(\frac{R^2}{a^2}-1 \right)\left(\frac{\p^2}{{\p x}^2}+\frac{\p^2}{{\p y}^2} \right)+\left(\frac{R^2}{c^2}-1 \right)\frac{\p^2}{{\p z}^2} \right]. \]
+Thus the problem of motion in an ellipsoidal well reduces to that of motion in a spherical well. If the ellipsoid is almost a sphere of radius $ R = (a^2c)^{1/3} $, $ \hat{V} $ may be regarded as a small perturbation. If the ellipsoidality $ \beta (|\beta|\ll1) $ is defined by
+\[ \alpha\approx R\left(1-\frac{\beta}{3} \right),\quad c\approx R\left(1+\frac{2\beta}{3} \right), \]
+the perturbation operator may be written
+\[ \hat{V}=\frac{\beta}{3M}(\hat{\bm{p}}^2-3\hat{p}_z^2). \]
+In the first order of perturbation theory, the change in the energy levels of the particle from their values in the spherical well is
+\[ \Delta E_{nlm}=E_{nlm}-E_{nl}^{(0)}=\langle nlm|V|nlm\rangle \]
+where $ l $ and $ m $ are the angular momentum of the particle and its component along the axis of the spheroid; $ n $ numbers the levels in the spherical well for a given $ l $, which are independent of $ m $. Since $ \bm{p}^2-3p_z^2 $ is the $ zz $-component of an irreducible tensor, $ \delta_{ik}\bm{p}^2-3p_ip_k $, with zero trace, we find from (107.2) and (107.6) that the matrix element $ \langle nlm|V|nln\rangle $ is proportional to
+\[ (-1)^m\left( \begin{array}{ccc}
+l&2&l\\
+-m&0&m\\
+\end{array} \right), \]
+and therefore
+\[ \langle nlm|V|nlm\rangle=\left(1-\frac{3m^2}{l(l+1)} \right)\langle nl0|V|nl0\rangle \]
+A table of $ 3j $-symbols is given in \S106.
+
+Next,
+\begin{multline*}
+\< nl0|V|nl0\>=\frac{2}{3}\beta E_{nl}^{(0)}+\beta\frac{\h^2}{M}\left\langle nl0\left|\frac{\p^2}{{\p z}^2}\right| nl0\right\rangle=\\
+=\frac{2}{3}\beta E_{nl}^{(0)}-\frac{\beta\h^2}{M}\int\left|\frac{\p\psi_{nl0}}{\p z}\right|^2r^2\d r\d o
+\end{multline*}
+in the first term we have used Schr\"odinger’s equation $ \hat{H}_0\psi_{nlm} = E_{nl}^{(0)}\psi_{nlm} $ for a spherical well, and in the second term integrated by parts. With $ Y_{l0} $ in the form \eqref{28.11}, we find the derivative of $ \psi_{nl0} = R_{nl}(r) Y_{l0} (\theta, \phi) $ to be
+\begin{multline*}
+\frac{\p}{\p z}\psi_{nl0}=\left(\cos\theta\frac{\p}{\p r}-\frac{\sin\theta}{r}\frac{\p}{\p \theta} \right)\psi_{nl0}=\\
+=-\frac{\i(l+1)}{[4(l+1)^2-1]^{1/2}}\left(R_{nl}'-\frac{l}{r}R_{nl} \right)Y_{l+1,0}+\\
++\frac{\i l}{[4l^2-1]^{1/2}}\left(R_{nl}'+\frac{l+1}{r}R_{nl} \right)Y_{l-1,0}.
+\end{multline*}
+The radial integrals are calculated by means of the formulae
+\[ \int_{0}^{\infty}R_{nl}R_{nl}'r\d r=-\frac{1}{2}\int_{0}^{\infty}R_{nl}^2\d r. \]
+\[ \int_0^{\infty}{R'}_{nl}^2r^2\d r=\frac{2M}{\h^2}E_{nl}^{(0)}-l(l+1)\int_0^\infty R_{nl}^2\d r, \]
+which are derived by integrating by parts and using the radial Schrödinger’s equation \eqref{33.3}
+\[ R_{nl}''+\frac{2}{r}R_{nl}''-\frac{l(l+1)}{r^2}R_{nl}=-\frac{2M}{\h^2}E_{nl}^{(0)}. \]
+The terms containing integrals of $ R_{nl}^2 $ cancel, and the final result is
+\[ \Delta E_{nlm}=4\beta\frac{l(l+1)}{(2l-1)(2l+3)}\left[\frac{m^2}{l(l+1)}-\frac{1}{3} \right]E_{nl}^{(0)}. \]
+Note that
+\[ \frac{1}{2l+1}\sum_{m=-l}^{l}E_{nlm}=E_{nl}^{(0)}, \]
+i.e. the “centre of gravity” of the multiplet is not shifted.
+}
+\section{The secular equation}\label{The secular equation}
+Let us now turn to the case where the unperturbed operator $ \hat{H}_0 $ has degenerate eigenvalues. We denote by $ \psi_n^{(0)}, \psi_{n'}^{(0)}, \dots $ the eigenfunctions belonging to the same eigenvalue $ E_n^{(0)} $ of the energy. The choice of these functions is, as we know, not unique; instead of them we can choose any $ s $ (where $ s $ is the degree of degeneracy of the level $ E_n^{(0)} $) independent linear combinations of these functions. The choice ceases to be arbitrary, however, if we subject the wave functions to the requirement that the change in them under the action of the small applied perturbation should be small.
+
+At present we shall understand by $ \psi_n^{(0)} , \psi_{n'}^{(0)}, \dots$ some arbitrarily selected unperturbed eigenfunctions. The correct functions in the zeroth approximation are linear combinations of the form
+\[ c_n^{(0)}\psi_n^{(0)}+c_{n'}^{(0)}\psi_{n'}^{(0)}+\dots \]
+The coefficients in these combinations are determined, together with the corrections in the first approximation to the eigenvalues, as follows.
+
+We write out equations \eqref{38.4} with $ k = n, n', \dots, $ and substitute in them, in the first approximation, $ E = E_n^{(0)} + E^{(1)} $; for the quantities $ c_k $ it suffices to take the zero-order values $ c_n = c_n^{(0)}, c_{n'} = c_{n'}^{(0)}, \dots; c_m = 0 $ for $ m \ne n, n', \dots. $ We then obtain
+\[ E^{(1)}c_n^{(0)}=\sum_{n'}V_{nn'}c_{n'}^{(0)} \]
+or
+\begin{equation}\label{39.1}
+\sum_{n'}\left(V_{nn'}-E^{(1)}\delta_{nn'} \right)c_{n'}^{(0)}=0,
+\end{equation}
+where $ n, n' $ take all values denumerating states belonging to the given unperturbed eigenvalue $ E_n^{(0)} $. This system of homogeneous linear equations for the quantities $ c_n^{(0)} $ has solutions which are not all zero if the determinant of the coefficients of the unknowns vanishes. Thus we obtain the equation
+\begin{equation}\label{39.2}
+\left|V_{nn'}-E^{(1)}\delta_{nn'} \right|=0.
+\end{equation}
+This equation is of the $ s $th degree in $ E^{(1)} $ and has, in general, $ s $ different real roots. These roots are the required corrections to the eigenvalues in the first approximation. Equation \eqref{39.2} is called the \textit{secular equation}.\footnote{The name is taken from celestial mechanics.} We notice that the sum of its roots is equal to the sum of the diagonal matrix elements $ V_{nn}, V_{n'n'}, \dots $ (this being the coefficient of $ [E^{(1)}]^{s-1} $ in the equation).
+
+Substituting in turn the roots of equation \eqref{39.2} in the system \eqref{39.1} and solving, we find the coefficients $ c_n^{(0)} $ and so determine the eigenfunctions in the zeroth approximation.
+
+As a result of the perturbation, an originally degenerate energy level ceases in general to be degenerate (the roots of equation \eqref{39.2} are in general distinct); the perturbation removes the degeneracy, as we say. The removal of the degeneracy may be either total or partial (in the latter case, after the perturbation has been applied, there remains a degeneracy of degree less than the original one).
+
+It may happen that for some reason all the matrix elements are particularly small (or even zero) for transitions within a group of mutually degenerate states $ n, n', \dots $. It may then be useful to take into account not only in the first order the matrix elements $ V_{nn'} $. but also in the higher orders the matrix elements $ V_{nm} (m \ne n, n' ,\dots) $ for transitions to states with a different energy. Let us do this for the matrix elements Vmn in the second order.
+
+In equation \eqref{38.4} with $ k = n $ we put on the left $ E = E_n^{(0)} + E_n^{(1)} $ (retaining the notation $ E^{(1)} $ for the correction to the energy in the approximation considered), and replace $ c_n $ by $ c_n^{(0)} $. Since $ c_m^{(0)} = 0 $ for all $ m \ne n, n' $ we have
+\begin{equation}\label{39.3}
+E^{(1)}c_n^{(0)}=\sum_{m}V_{nm}c_m^{(1)}+\sum_{n'}V_{nn'}c_{n'}^{(0)}.
+\end{equation}
+The equations \eqref{38.4} with $ k = m \ne n, n', \dots $ give as far as the first-order terms
+\[ (E_n^{(0)}-E_m^{(0)})c_m^{(1)}=\sum_{n'}^{(1)}=\sum_{n'}V_{mn'}c_{n'}^{(0)}, \]
+whence
+\[ c_m^{(1)}=\sum_{n'}\frac{V_{mn'}}{E_n^{(0)}-E_m^{(0)}}c_{n'}^{(0)}. \]
+Substitution in \eqref{39.3} gives
+\[ E^{(1)}c_n^{(0)}=\sum_{n'}c_{n'}^{(0)}\left(V_{nn'}+\sum_{m}\frac{V_{nm}V_{mn'}}{E_n^{(0)}-E_m^{(0)}} \right). \]
+These equations replace \eqref{39.1}; the condition for them to be compatible again leads to the secular equation, which differs from \eqref{39.2} by the change
+\begin{equation}\label{39.4}
+V_{nn'}\to V_{nn'}+\sum_{m}\frac{V_{nm}V_{mn'}}{E_n^{(0)}-E_m^{(0)}}
+\end{equation}
+
+
+{\small
+
+
+
+\textbf{PROBLEMS}
+
+
+\textbf{1.} Determine the corrections to the eigenvalue in the first approximation and the correct functions in the zeroth approximation, for a doubly degenerate level.
+
+
+
+
+
+SOLUTION. Equation \eqref{39.2} here has the form
+\[ \left|\begin{array}{cc}
+V_{11}-E^{(1)}&V_{21}\\
+V_{12}&V_{22}-E^{(1)}
+\end{array}  \right|=0 \]
+(the suffixes $ 1 $ and $ 2 $ correspond to two arbitrarily chosen unperturbed eigenfunctions $ \psi_1^{(0)} $ and $ \psi_1^{(0)} $ of the degenerate level in question). Solving, we find
+\begin{equation}\label{39-1-1}
+E^(1)=\frac{1}{2}\left[V_{11}+V_{22}\pm\h\omega^{(1)} \right],\tag{1}
+\end{equation}
+with the notation
+\[ \h\omega^{(1)}=\sqrt{(V_{11}-V_{22})^2+4|V_{12}|^2} \]
+for the difference between the two values of the correction $ E^{(1)} $ Solving also equations \eqref{39.1} with these values of $ E^{(1)} $, we obtain for the coefficients in the correct normalized function in the zeroth approximation, $ \psi^{(0)} = c_1^{(0)} \psi_1^{(0)} + c_2^{(0)} \psi_2^{(0)} $, the values
+\begin{equation}\label{39-1-2}
+\begin{split}
+c_1^{(0)}&=\left\{\frac{V_{12}}{2|V_{12}|}\left[1\pm \frac{V_{11}-V_{22}}{\h\omega^{(1)}}\right]  \right\}^{1/2},\\
+c_2^{(0)}&=\pm\left\{\frac{V_{21}}{2|V_{12}|}\left[1\mp\frac{V_{11}-V_{22}}{\h\omega^{(1)}} \right] \right\}^{1/2}.
+\end{split}\tag{2}
+\end{equation}
+
+
+
+
+
+
+\textbf{2.} Derive the formulae for the correction to the eigenfunctions in the first approximation and to the eigenvalues in the second approximation.
+
+
+
+
+
+SOLUTION. We shall suppose that the correct functions in the zeroth approximation are chosen as the functions $ \psi_n^{(0)} $. The matrix $ V_{nn'} $, defined with respect to these is clearly diagonal with respect to the suffixes $ n, n' $ (belonging to the same group of functions of a degenerate level), and the diagonal elements $ V_{nn}, V_{n'n'} $, are equal to the corresponding corrections $ E_n^{(1)}, E_{n'}^{(1)}, \dots $ in the first approximation.
+
+Let us consider a perturbation of the eigenfunction $ \psi_n^{(0)} $, so that in the zeroth approximation $ E = E_n^{(0)}, c_n^{(0)} = 1, c_m^{(0)} = 0 $ for $ m \ne n $. In the first approximation $ E = E_n^{(0)} + V_{nn}, c_n = 1 + c_n^{(1)}, c_m = c_m^{(1)} $. We write out from the system \eqref{38.4} the equation with $ k \ne n, n',\dots , $ retaining in it terms of the first order:
+\[ (E_n^{(0)}-E_k^{(0)})c_k^{(1)}=V_{kn}c_n^{(0)}=V_{kn}, \]
+whence
+\begin{equation}\label{39-2-1}
+c_k^{(1)}=\frac{V_{kn}}{E_{n}^{(0)}-E_k^{(0)}}\quad\text{  for  }k\ne n,n',\dots\tag{1}
+\end{equation}
+Next we write out the equation with $ k = n' $, retaining in it terms of the second order:
+\[ E_n^{(1)}c_{n'}^{(1)}=V_{n'n'}c_{n'}^{(1)}+{\sum_m}'V_{n'm}c_m^{(1)} \]
+(the terms with $ m = n, n', \dots $ are omitted in the sum over $ m $). Substituting $ E_n^{(1)} = V_{nn} $ and the expression \eqref{39-2-1} for $ c_m^{(1)} $, we obtain for $ n'\ne  n $
+\begin{equation}\label{39-2-2}
+c_{n'}^{(1)}=\frac{1}{(V_{nn}-V_{n'n'})}{\sum_m}'\frac{V_{n'm}V_{mn}}{E_n^{(0)}-E_m^{(0)}}\tag{2}
+\end{equation}
+(In this approximation the coefficient $ c_n^{(1)} $ is zero.) Formulae \eqref{39-2-1} and \eqref{39-2-2} determine the correction $ \psi_n^{(1)} = \sum_m c_m^{(1)} \psi_m^{(0)} $ to the eigenfunctions in the first approximation.\footnote{Note that the condition for the quantities \eqref{39-2-1} and \eqref{39-2-2} to be small (and therefore the condition for this method of perturbation theory to be applicable) again requires the conditions \eqref{38.9} to be satisfied only for transitions between states belonging to different energy levels. Transitions between states belonging to the same degenerate level are taken into account exactly (in a certain sense) by the secular equation.}
+
+Finally, writing out the second-order terms in equation \eqref{38.4} with $ k = n $, we obtain for the second-order corrections to the energy the formula
+\begin{equation}\label{39-2-3}
+E_n^{(2)}={\sum_m}'\frac{V_{nm}V_{mn}}{E_n^{(0)}-E_m^{(0)}}\tag{3}
+\end{equation}
+which is formally identical with \eqref{38.10}.
+
+
+
+
+
+\textbf{3.} At the initial instant $ t = 0 $, a system is in a state $ \psi_1^{(0)} $ which belongs to a doubly degenerate level. Determine the probability that, at a subsequent instant $ t $, the system will be in the state $ \psi_2^{(0)} $ with the same energy; the transition occurs under the action of a constant perturbation.
+
+
+
+
+
+SOLUTION. We form the correct functions in the zeroth approximation,
+\[ \psi=c_1\psi_1+c_2\psi_2,\quad\psi'=c_1'\psi_1+c_2'\psi_2, \]
+where$  c_1, c_2; c_1', c_2' $ are two pairs of coefficients determined by formulae \eqref{39-1-1} of Problem $ 1 $ (for brevity, we omit the index $ (0) $ on all quantities).
+
+Conversely,
+\[ \psi_1=\frac{c_2'\psi-c_2\psi'}{c_1c_2'-c_1'c_2}. \]
+The functions $\psi$ and $\psi'$ belong to states with perturbed energies $ E + E^{(1)} $ and $ E + {E^{(1)}}' $, where $ E^{(1)} $ and $ {E^{(1)}}' $ are the two values of the correction $ (1) $ in Problem $ 1 $. On introducing the time factors we pass to the time-dependent wave functions:
+\[ \psi_1=\frac{\exp(-(\i/\h)Et)}{c_1c_2'-c_1'c_2}\left[ c_2'\exp\left(-\frac{\i}{\h}E^{(1)}t \right)-c_2\psi'\exp\left(-\frac{\i}{\h}{E^{(1)}}'t \right) \right] \]
+(at time $ t = 0, \Psi_1 = \psi_1 $). Finally, again expressing $ \psi, \psi' $ in terms of $ \psi_1, \psi_2 $, we obtain $ \Psi_1 $, as a linear combination of $ \psi_1 $, and $ \psi_2 $, with coefficients depending on time. The squared modulus of the coefficient of $ \psi_2 $ determines the required transition probability $ w_{21} $. Calculation with \eqref{39-1-1} and \eqref{39-1-2} from Problem $ 1 $ gives
+\[ w_{21}=2\frac{|V_{12}|^2}{(\h\omega^{(1)})^2}[1-\cos(\omega^{(1)}t)]. \]
+We see that the probability varies periodically with time, with frequency $ \omega^{(1)} $.
+
+For times $ t $ which are small compared with the period in question, the expression in the braces, and therefore $ w_{21} $, is proportional to $ t^2 $: 
+\[ w_{21}=\frac{1}{\h^2}|V_{21}|^2t^2; \]
+This formula can be very simply obtained by the method given in the next section (using equation \eqref{40.4}).}
+
+
+
+
+
+
+\section{Perturbations depending on time}\label{Perturbations depending on time}
+Let us now go on to study perturbations depending explicitly on time. We cannot speak in this case of corrections to the eigenvalues, since, when the Hamiltonian is time-dependent (as will be the perturbed operator $ \hat{H}=\hat{H}_0+\hat{V}(t) $), the energy is not conserved, so that there are no stationary states. The problem here consists in approximately calculating the wave functions from those of the stationary states of the unperturbed system.
+
+To do this, we shall apply a method analogous to the well-known method of varying the constants to solve linear differential equations (P. A. M. Dirac 1926). Let $ \Psi_k^{(0)} $ be the wave functions (including the time factor) of the stationary states of the unperturbed system. Then an arbitrary solution of the unperturbed wave equation can be written in the form of a sum $ \Psi=\sum a_k\Psi_k^{(0)} $ . We shall now seek the solution of the perturbed equation
+\begin{equation}\label{40.1}
+\i\h\frac{\p\Psi}{\p t}=(\hat{H}_0+\hat{V})\Psi
+\end{equation}
+in the form of a sum
+\begin{equation}\label{40.2}
+\Psi=\sum_ka_k(t)\Psi_k^{(0)},
+\end{equation}
+where the expansion coefficients are functions of time. Substituting \eqref{40.2} in \eqref{40.1}, and recalling that the functions $ \Psi_k^{(0)} $ satisfy the equation
+\[ \i\h\frac{\p\Psi_k^{(0)}}{\p t}=\hat{H}_0\Psi_k^{(0)}, \]
+we obtain
+\[ \i\h\sum_k\Psi_k^{(0)}\frac{\d a_k}{\d t}=\sum_k a_k\hat{V}\Psi_k^{(0)}. \]
+
+
+
+Multiplying both sides of this equation on the left by $ \Psi_m^{(0)*} $ and integrating, we have
+\begin{equation}\label{40.3}
+\i\h\frac{\d a_m}{\d t}=\sum_k V_{mk}(t)a_k,
+\end{equation}
+where
+\[ V_{mk}(t)=\int\Psi_m^{(0)*}\hat{V}\Psi_k^{(0)}\d q=V_{mk}\e^{\i\omega_{mk}t},\quad\omega_{mk}=\frac{E_m^{(0)}-E_k^{(0)}}{\h} \]
+are the matrix elements of the perturbation, including the time factor (and it must be borne in mind that, when $ V $ depends explicitly on time, the quantities $ V_{mk} $ also are functions of time).
+
+As the unperturbed wave function we take the wave function of the nth stationary state, for which the corresponding values of the coefficients in \eqref{40.2} are $ a_n^{(0)} = 1, a_k^{(0)} = 0 $ for $ k \ne n $. To find the first approximation, we seek $ a_k $ in the form $ a_k = a_k^{(0)} + a_k^{(1)} $ substituting $ a_k = a_k^{(0)} $ on the right-hand side of equation \eqref{40.3}, which already contains the small quantities $ V_{mk} $. This gives
+\begin{equation}\label{40.4}
+\i\h\frac{\d a_k^{(1)}}{\d t}=V_{kn}(t)
+\end{equation}
+In order to show the unperturbed function to which the correction is being calculated, we introduce a second suffix in the coefficients $ a_k $, writing
+\[ \Psi_n=\sum_n a_{kn}(t)\Psi_k^{(0)}. \]
+Accordingly, we write the result of integrating equation \eqref{40.4} in the form
+\begin{equation}\label{40.5}
+a_{kn}^{(1)}=-\frac{\i}{\h}\int V_{kn}(t)\d t=-\frac{\i}{\h}\int V_{kn}\e^{\i\omega_{kn}t}\d t.
+\end{equation}
+This determines the wave functions in the first approximation.
+
+Let us now consider in more detail the important case of a perturbation which is periodic with respect to time, of the form
+\begin{equation}\label{40.6}
+\hat{V}=\hat{F}\e^{-\i\omega t}+\hat{G}\e^{\i\omega t},
+\end{equation}
+where $\hat{F}$ and $ \hat{G} $ are operators independent of time. Since $ V $ is Hermitian, we must have
+\[ \hat{F}\e^{-\i\omega t}+\hat{G}\e^{\i\omega t}=\hat{F}^{\dagger}\e^{\i\omega t}+\hat{G}^{\dagger}\e^{-\i\omega t}
+ \]
+whence $ \hat{G}=\hat{F}^\dagger $, i.e.
+\begin{equation}\label{40.7}
+G_{nm}=F_{mn}^*
+\end{equation}
+This relation shows that
+\begin{equation}\label{40.8}
+V_{kn}(t)=V_kn\e^{\i\omega_{kn}t}=F_{kn}\e^{\i(\omega_{kn}-\omega)t}+F_{nk}^*\e^{\i(\omega_{kn}+\omega)t}.
+\end{equation}
+
+
+Substituting in \eqref{40.5} and integrating, we obtain the following expression for the expansion coefficients of the wave functions:
+\begin{equation}\label{40.9}
+a_{kn}^{(1)}=-\frac{F_{kn}\e^{\i(\omega_{kn}-\omega)t}}{\h(\omega_{kn}-\omega)}-\frac{F_{kn}^*\e^{\i(\omega_{kn}+\omega)t}}{\h(\omega_{kn}+\omega)}.
+\end{equation}
+These expressions are applicable if none of the denominators vanishes,\footnote{More precisely, if none is so small that the quantities $ a_{kn}^{(1)} $ are no longer small compared with unity.
+} i.e. if for all $ k $ (and the given $ n $)
+\begin{equation}\label{40.10}
+E_k^{(0)}-E_n^{(0)}\ne\pm\h\omega
+\end{equation}
+
+
+In a number of applications it is useful to have expressions for the matrix elements of an arbitrary quantity $ f $, defined with respect to the perturbed wave functions. In the first approximation we have
+\[ f_{nm}(t)=f_{nm}^{(0)}(t)+f_{nm}^{(1)}(t), \]
+where
+\[ f_{nm}^{(0)}(t)=\int\Psi_n^{(0)*}\hat{f}\Psi_m^{(0)}\d q=f_{nm}^{(0)}\e^{\i\omega_{nm}t}, \]
+\[ f_{nm}^{(1)}(t)=\int(\Psi_n^{(0)*}\hat{f}\Psi_m^{(1)}+\Psi_n^{(1)*}\hat{f}\Psi_m^{(0)})\d q. \]
+Substituting here $ \Psi_n^{(1)} =\sum_k a_{kn}^{(1)}\Psi_k^{(0)} $, with $ a_{kn}^{(1)} $ determined by formula \eqref{40.9}, it is easy to obtain the required expression
+\begin{multline}\label{40.11}
+f_{nm}^{(1)}(t)=-\e^{\i\omega_{nm}t}\sum_k\left\{\left[\frac{f_{nk}^{(0)}F_{km}}{\h(\omega_{km}-\omega)}+\frac{f_{km}^{(0)}F_{nk}}{\h(\omega_{kn}+\omega)} \right]\e^{-\i\omega t}+\right.\\
+\left.+\left[\frac{f_{nk}^{(0)}F_{mk}^*}{\h(\omega_{km}+\omega)}+\frac{f_{km}^{(0)}F_{nk}^*}{\h(\omega_{kn}-\omega)}\right]\e^{\i\omega t}  \right\}.
+\end{multline}
+This formula is applicable if none of its terms becomes large, i.e. if none of the frequencies $ \omega_{kn}, \omega_{km} $ is too close to $\omega$. For $ \omega = 0 $ we return to formula \eqref{38.12}.
+
+In all the formulae given here, it is understood that there is only a discrete spectrum of unperturbed energy levels. However, these formulae can be immediately generalized to the case where there is also a continuous spectrum (as before, we are concerned with the perturbation of states of the discrete spectrum); this is done by simply adding to the sums over the levels of the discrete spectrum the corresponding integrals over the continuous spectrum. Here it is necessary for the denominators $ \omega_{kn}\pm\omega $ in formulae \eqref{40.9}, \eqref{40.11} to be non-zero when the energy $ E_k^{(0)} $ takes all values, not only of the discrete but also of the continuous spectrum. If, as usually happens, the continuous spectrum lies above all the levels of the discrete spectrum, then, for instance the condition \eqref{40.10} must be supplemented by the condition
+\begin{equation}\label{40.12}
+E_{\mathrm{min}}^{(0)}-E_n^{(0)}>\h\omega
+\end{equation}
+where $ E_\mathrm{min}^{(0)} $ is the energy of the lowest level of the continuous spectrum.
+
+
+
+
+
+{\small
+	
+\textbf{PROBLEM}
+
+
+\textbf{1.} Determine the change in the nth and mth solutions of Schr\"odinger’s equation in the presence of a periodic perturbation (of the form \eqref{40.6}), of frequency ω such that $ E_m^{(0)} − E_n^{(0)} = \h(\omega+\epsilon) $, where $\epsilon$ is a small quantity.
+
+
+
+
+
+SOLUTION. The method developed in the text is here inapplicable, since the coefficient $ a_{mn}^{(1)} $ in \eqref{40.9} becomes large. We start afresh from the exact equations \eqref{40.3}, with $ V_{mk}^{(t)} $ given by \eqref{40.8}. It is evident that the most important effect is due to those terms, in the sums on the right-hand side of equations \eqref{40.3}, in which the time dependence is determined by the small frequency $ \omega_{mn} - \omega $. Omitting all other terms, we obtain a system of two equations:
+\[ \i\h\frac{\d a_m}{\d t}=F_{mn}\e^{\i(\omega_{mn}-\omega)t}a_n=F_{mn}\e^{\i\epsilon t}a_n,\quad\i\h\frac{a_n}{\d t}=F_{mn}^*a_m. \]
+We make the substitution
+\[ a_n\e^{\i\epsilon t} =b_n\]
+and obtain the equations
+\[ \i\h\dot{a}_m=F_{mn}b_n,\quad\i\h(\dot{b}_n-\i\epsilon b_n)=F_{mn}^*a_m. \]
+Eliminating $ a_m $, we have
+\[ \dot{b}_n-\i\epsilon\dot{b}_n+(1/\h^2)|F_{mn}|^2b_n=0. \]
+We can take as two independent solutions of these equations
+\begin{equation}\label{40-1-1}
+a_n=A\e^{\i\alpha t},\quad a_m=-A\frac{\h\alpha_1}{F_{mn}^*}\e^{\i\alpha_2 t}\tag{1}
+\end{equation}
+and
+\begin{equation}\label{40-1-2}
+a_n=B\e^{-\i\alpha_2 t},\quad a_m=B\frac{\h\alpha_2}{F_{mn}^*}\e^{-\i\alpha_1 t},\tag{2}
+\end{equation}
+where $ A $ and $ B $ are constants (which have to be determined from the normalization condition), and we have used the notation
+\[ \alpha_1=-\epsilon/2+\Omega,\quad \alpha_2=\epsilon/2+\Omega,\quad\Omega=\sqrt{\epsilon^2/4+|\eta|^2},\quad\eta=F_{mn}/\h. \]
+
+
+
+Thus, under the action of the perturbation, the functions $ \Psi_n^{(0)}, \Psi_m^{(0)} $ become $ a_n \Psi_n^{(0)} +a_m\Psi_m^{(0)} $, with $ a_n $ and $ a_m $ given by \eqref{40-1-1} and \eqref{40-1-2}.
+
+Let the system be in the state $ \Psi_m^{(0)} $ at the initial instant ($ t = 0 $). The state of the system at subsequent instants is given by a linear combination of the two functions which we have obtained, which becomes $ Ψ_m^{(0)} $ for $ t = 0 $:
+\begin{equation}\label{40-1-3}
+\Psi=\e^{\i\epsilon t/2}\left(\cos\Omega t-\frac{\i\epsilon}{2\Omega}\sin\Omega t \right)\Psi_m^{(0)}-\frac{\i\eta^*}{\Omega}\e^{-\i\epsilon t/2}\sin\Omega t\cdot\Psi_n^{(0)}.
+\end{equation}
+The squared modulus of the coefficient of $ \Psi_n^{(0)} $ is
+\begin{equation}\label{40-1-4}
+\frac{|\eta|^2}{2\Omega^2}\left[1-\cos(2\Omega t) \right].\tag{4}
+\end{equation}
+
+This gives the probability of finding the system in the state $ \Psi_n^{(0)} $ at time $ t $. We see that it is a periodic function with frequency $ 2\Omega $, and varies from $ 0 $ to $ |\eta|^2/\Omega^2 $.
+
+For $ \epsilon= 0  $(exact resonance) the probability \eqref{40-1-4} becomes
+\[ (1/2)\left[1-\cos(2|\eta|t) \right]. \]
+It varies periodically between $ 0 $ and $ 1 $; in other words, the system makes periodic transitions from the state $ \Psi_m^{(0)} $ to the state $ \Psi_n^{(0)} $.
+}
+
+\section{Transitions under a perturbation acting for a finite time}\label{Transitions under a perturbation acting for a finite time}
+
+Let us suppose that the perturbation $ V (t) $ acts only during some finite interval of time (or that $ V (t) $ diminishes sufficiently rapidly as $ t \to\pm\infty  $). Let the system be in the $ n $th stationary state (of a discrete spectrum) before the perturbation begins to act (or in the limit as $ t \to-\infty  $). At any subsequent instant the state of the system will be determined by the function
+\[ \Psi=\sum_k a_{kn}\Psi_k^{(0)} ,\]
+where, in the first approximation,
+\begin{equation}\label{41.1}
+\begin{split}
+a_{kn}=a_{kn}^{(1)}=-\frac{\i}{\h}\int_{-\infty}^tV_{kn}\e^{\i\omega_{kn}t}\d t,\quad k\ne n,\\
+a_{nn}=1+a_{nn}^{(1)}=1-\frac{\i}{\h}\int_{-\infty}^{t}V_{nn}\d t;
+\end{split}
+\end{equation}
+the limits of integration in \eqref{40.5} are taken so that, as $ t \to-\infty  $, all the $ a_{kn}^{(1)} $ tend to zero. After the perturbation has ceased to act (or in the limit $ t \to\infty $), the coefficients $ a_{kn} $ take constant values $ a_{kn}(\infty) $, and the system is in the state with wave function
+\[ \Psi=\sum_ka_{kn}(\infty)\Psi_k^{(0)}, \]
+which again satisfies the unperturbed wave equation, but is different from the original function $ \Psi_n^{(0)} $. According to the general rule, the squared modulus of the coefficient $ a_{kn}(\infty) $ determines the probability for the system to have an energy $ E_k^{(0)} $, i.e. to be in the $ k $th stationary state.
+
+Thus, under the action of the perturbation, the system may pass from its initial stationary state to any other. The probability of a transition from the initial ($ i $th) to the final ($ f $th) stationary state is\footnote{For uniformity, the initial and final states will henceforward be denoted by $ i $ and $ f $ when transition probabilities are discussed. The suffixes of these probabilities will be written in the order $ fi $, the same as for matrix elements.}
+\begin{equation}\label{41.2}
+w_{fi}=\frac{1}{\h^2}\left|\int_{-\infty}^{+\infty}V_{fi}\e^{\i\omega_{fi}t}\d t \right|^2.
+\end{equation}
+
+
+Let us now consider a perturbation which, once having begun, continues to act for an indefinite time (always, of course, remaining small). In other words, $ V (t) $ tends to zero as $ t → -\infty $ and to a finite non-zero limit as $ t \to+\infty $. Formula \eqref{41.2} cannot be applied directly here, since the integral in it diverges. This divergence, however, is physically unimportant and can easily be removed. To do this, we integrate by parts:
+\[ a_{fi}=-\frac{\i}{\h}\int_{-\infty}^{t}V_{fi}\e^{\i\omega_{fi}t}\d t-\left.\frac{V_{fi}\e^{\i\omega_{fi}t}}{\h\omega_{fi}}\right|_{-\infty}^t+\int_{-\infty}^t\frac{\p V_{fi}}{\p t}\frac{\e^{\i\omega_{fi}t}}{\h\omega_{fi}}\d t. \]
+The value of the first term vanishes at the lower limit, while at the upper limit it is formally identical with the expansion coefficients in formula \eqref{38.8}; the presence of an additional periodic factor $ \e^{\i\omega_{fi}t} $ is merely due to the fact that the $ a_{fi} $ are the expansion coefficients of the complete wave function $\Psi$, while the $ c_{fi} $ in \S\ref{Perturbations independent of time} are the expansion coefficients of the time-independent function $\psi$. Hence it is clear that its limit as $ t \to\infty $ gives simply the change in the original wave function $ Ψ_i^{(0)} $ under the action of the “constant” part $ V (+\infty) $ of the perturbation, and consequently has no relation to transitions into other states. The probability of a transition is given by the squared modulus of the second term and is
+\begin{equation}\label{41.3}
+w_{fi}=\frac{1}{\h^2\omega_{fi}^2}\left|\int_{-\infty}^{+\infty}\frac{\p V_{fi}}{\p t}\e^{\i\omega_{fi}t}\d t \right|^2.
+\end{equation}
+
+
+
+The derivation is also valid when the transition is from a state of the discrete spectrum to a state of the continuous spectrum. The only difference is that here we have the probability of the transition from a given ($ i $th) state to states in a range of values of $ \nu_f $ (see the end of \S\ref{Perturbations independent of time} from $ \nu_f $ to $ \nu_f+\d\nu_f $, so that, for example, formula \eqref{41.2} must be written
+\begin{equation}\label{41.4}
+\d w_{if}=\frac{1}{\h^2}\left|\int_{-\infty}^{+\infty}V_{fi}\e^{\i\omega_{fi}t}\d t \right|^2\d\nu_f.
+\end{equation}
+If the perturbation $ V (t) $ varies little during time intervals of the order of the period $ \sim1/\omega_{fi} $ the value of the integral in \eqref{41.2} or \eqref{41.3} will be very small. In the limit when the applied perturbation varies arbitrarily slowly, the probability of any transition with change of energy (i.e. with a non-zero frequency $ 1/\omega_{fi} $) tends to zero. Thus, when the applied perturbation changes sufficiently slowly (\textit{adiabatically}), a system in any non-degenerate stationary state will remain in that state (see also \S\ref{Transitions under the action of adiabatic perturbations}).
+
+In the opposite limiting case of a very rapid, “\textit{instantaneous}” application of the perturbation, the derivatives $ \p V_{fi}/\p t $ become infinite at the “instant of application”. In the integral of $ \frac{\p V_{fi}}{\p t}\e^{\i\omega_{fi}t} $, we can take outside the integral the comparatively slowly varying factor $ \e^{\i\omega_{fi}t} $ and use its value at this instant. The integral is then found at once, and we obtain
+\begin{equation}\label{41.5}
+w_{fi}=\frac{|V_{fi}|^2}{\h^2\omega_{fi}^2}
+\end{equation}
+The transition probabilities in instantaneous perturbations can also be found in cases where the perturbation is not small. Let the system be in a state described by one of the eigenfunctions $ \psi_i^{(0)} $ of the original Hamiltonian $ \hat{H}_0 $. If the change in the Hamiltonian occurs instantaneously (i.e. in a time short compared with the periods $ 1/\omega_{fi} $ of transitions from the given state $ i $ to other states), then the wave function of the system is “unable” to vary and remains the same as before the perturbation. It will no longer, however, be an eigenfunction of the new Hamiltonian $\hat{H}$ of the system, i.e. the state $ \psi_i^{(0)} $ will not be a stationary state. The probabilities $ w_{fi} $ for transitions of the system into the new stationary states are determined, according to the general rules of quantum mechanics, by the coefficients in the expansion of the function $ \psi_i^{(0)} $ in terms of the eigenfunctions $ \psi_f $ of the Hamiltonian $\hat{H}$:
+\begin{equation}\label{41.6}
+w_{fi}=\left|\int\psi_i^{(0)}\psi_f^*\d q \right|^2.
+\end{equation}
+
+
+We shall show how this general formula becomes \eqref{41.5} if the change in the Hamiltonian $ \hat{V}=\hat{H}-\hat{H}_0 $ is small. We multiply the equations
+\[ \hat{H}_0\psi_i^{(0)}=E_i^{(0)}\psi_i^{(0)},\quad\hat{H}^*\psi_f^*=E_f\psi_f^* \]
+by $ \psi_f^* $ and $ \psi_i^{(0)} $ respectively, integrate with respect to $\d q $ and subtract. Using also the self-conjugacy of the operator $\hat{H}$, we obtain
+\[ (E_f-E_i^{(0)})\int\psi_f^*\psi_i^{(0)}\d q=\int\psi_f^*\hat{V}\psi_i^{(0)}\d q. \]
+
+
+
+If the perturbation $\hat{V}$ is small, in the first approximation we can replace $ E_f $ by the adjoining unperturbed level $ E_f^{(0)} $, and the wave function $ \psi_f $ (on the right-hand side of the equation) by the corresponding function $ \psi_f^{(0)} $. This gives
+\[ \int\psi_f^*\psi_i^{(0)}\d q=\frac{1}{\h\omega_{fi}}\int\psi_f^{(0)*}\hat{V}\psi_i^{(0)}\d q, \]
+and formula \eqref{41.6} becomes \eqref{41.5}.
+
+
+
+
+{\small
+\textbf{PROBLEMS}
+
+
+\textbf{1.} A uniform electric field is suddenly applied to a charged oscillator in the ground state. Determine the probabilities of transitions of the oscillator to excited states under the action of this perturbation.
+
+
+
+
+
+SOLUTION. The potential energy of the oscillator in the uniform field (which exerts a force $ F $ on it) is
+\[ U(x)=\frac{m\omega^2}{2}x^2-Fx\frac{m\omega^2}{2}(x-x_0)^2+\mathrm{const}, \]
+
+
+
+(where $ x_0 = F/m\omega^2 $), i.e. has still the pure oscillator form but with the equilibrium position shifted. Hence the wave functions of the stationary states of the perturbed oscillator are $ \psi_k(x - x_0) $, where $ \psi_k(x) $ are the oscillator functions \eqref{23.12}; the initial wave function is $ \psi_0(x) $ \eqref{23.13}. Using these functions and the expression \eqref{23.11} for the Hermite polynomials, we find
+\[ \int_{-\infty}^{+\infty}\psi_0^{(0)}\psi_k\d x=\frac{(-1)^k}{\sqrt{2^k\pi k!}}\e^{-\xi_0^2/2}\int_{-\infty}^{+\infty}\e^{-\xi\xi_0}\frac{\d^k}{{\d \xi}^k}\e^{-\xi^2+2\xi\xi_0}\d\xi, \]
+with the notation $ \xi_0 = x_0 \sqrt{m\omega/\h} $. On integrating $ k $ times by parts, the integral on the right becomes
+\[ \xi_0^k\int_{-\infty}^{+\infty}\exp(-\xi^2+\xi\xi_0)\d\xi=\xi_0^k\sqrt{\pi}\exp\frac{\xi_0^2}{4}. \]
+
+
+
+Thus the transition probability \eqref{41.6} is
+\[ w_{k0}=\frac{\bar{k}^k}{k!}\e^{-\bar{k}},\quad\bar{k}=\frac{\xi_0^2}{2}=\frac{F^2}{2m\h\omega^3}. \]
+As a function of the number $ k $ it represents a Poisson distribution for which the mean value of $\bar{k}$ is .
+
+Perturbation theory is applicable when $ F $ is small, so that $ \bar{k}\ll1 $. Then the excitation probabilities are small, and decrease rapidly with increasing $ \bar{k} $. The largest is $ w_{10}\approx\bar{k} $.
+
+In the opposite case of large $ F(\bar{k}\gg1) $, excitation of the oscillator occurs with very high probability: the probability that the oscillator will remain in the normal state is $ w_{00}=\e^{-\bar{k}} $.
+
+
+
+
+
+\textbf{2.} The nucleus of an atom in the normal state receives an impulse which gives it a velocity $ v $; the duration $\tau$ of the impulse is assumed short in comparison both with the electron periods and with $ a/v $, where $ a $ is the dimension of the atom. Determine the probability of excitation of the atom under the influence of such a “jolt” (A. B. Migdal 1939).
+
+
+
+
+
+SOLUTION. We use a frame of reference $ K' $ moving with the nucleus after the impact. By virtue of the condition $ \tau\ll a/v $, the nucleus may be regarded as practically stationary during the impact, so that the coordinates of the electrons in $ K' $ and in the original frame $ K $ immediately after the perturbation are the same. The initial wave function in $ K' $ is
+\[ \psi_0'=\psi_0\exp(-\i\bm{q}\sum_a\bm{r}_a ),\quad\bm{q}=\frac{m\bm{v}}{\h}, \]
+where $\psi_0$ is the wave function of the normal state with the nucleus at rest, and the summation in the exponent is over all $ Z $ electrons in the atom. The required probability of transition to the $ k $th excited state is now given, according to \eqref{41.6}, by
+\[ w_{k0}={\left\vert\langle k|\exp(-\i\bm{q}\sum_a\bm{r}_a )|0\rangle \right\vert}^2. \]
+In particular, if $ qa\ll1 $, then by expanding the exponential factor in the integrand and noting that the integral of $ \psi_k^*\psi_0 $ is zero because the functions $ \psi_0 $ and $ \psi_k $ are orthogonal, we obtain
+\[ w_{k0}=\left|\<k\left|\bm{q}\sum_a\bm{r}_a\right|0\> \right|^2. \]
+
+
+
+
+\textbf{3.} Determine the total probability of excitation and ionization of an atom of hydrogen which receives a sudden “jolt” (see Problem 2).
+
+
+
+
+
+SOLUTION.
+
+
+The required probability can be calculated as the difference
+\[ 1-w_{00}=1-\left|\int \psi^2_0\e^{-\i\bm{q}\bm{r}}\d V \right| ,\]
+where $ w_{00} $ is the probability that the atom will remain in the ground state ($ \psi_0 = (\pi a^3)^{-1/2}\e^{-r/a} $ being the wave function of the ground state of the hydrogen atom, with $ a $ the Bohr radius) Calculation of the integral gives
+\[ 1-w_{00}=1-\frac{1}{(1+\frac{1}{4}q^2a^2)^4} .\]
+
+
+
+In the limiting case $ qa\ll 1 $ this probability tends to zero as $ q^2a^2 $, while for $ qa\gg 1 $ it tends to unity as $ 1 - (2/qa)^8 $.
+
+
+
+
+
+\textbf{4.} Determine the probability that an electron will leave the $ K $-shell of an atom with large atomic number $ Z $ when the nucleus undergoes $\beta$-decay. The velocity of the $\beta$-particle is assumed large in comparison with that of the $ K $-electron (A. B. Migdal and E. L. Feinberg 1941).
+
+
+
+
+
+SOLUTION.\footnote{In Problems 4 and 5, atomic units are used.}
+
+
+In the conditions stated the time taken by the $\beta$-particle to pass through the $ K $-shell is small compared with the period of revolution of the electron, so that the change in the nuclear charge can be regarded as instantaneous. The perturbation is here represented by the change $ V = 1/r $ in the field of the nucleus when the change in its charge is small (1 compared with $ Z $). According to \eqref{41.5} the transition probability for one of the two $ K $-shell electrons with energy $ E_0=-Z^2/2 $ (here and below we use the fact that the state of the $ K $-electrons is hydrogen-like; see \S74) to a state of the continuous spectrum with energy $ E=k^2/2 $ in the range $\d E = k \d k $ is
+\[ \d w=2\frac{4|V_{0k}|^2}{(k^2+Z^2)^2}\d k \]
+
+
+
+In the range which determines the matrix element $ V_{0k} $, the important part is that of short distances ($ \sim1/Z $) from the nucleus, in which the hydrogen-like expression can again be used for the wave function of a state of the continuous spectrum. The final state of the electron must have angular momentum $ l = 0 $ (the same as that of the initial state). By means of the functions $ R_{l0} $, and $ R_{k0} $ (normalized on the $ k/2\pi $ scale), derived in \S\ref{Motion in a Coulomb field (spherical polar coordinates)} and formula (f.3) in the Mathematical Appendices we find\footnote{In the calculation it is convenient to use Coulomb units and then return to atomic units in the final result.}
+\[ \left(\frac{1}{r} \right)_{0k}=\frac{4\sqrt2\pi k}{1-\e^{-2\pi Z/k}}\frac{(1+\i k/Z)^{\i Z/k}(1-\i k/Z)^{-\i Z/k}}{1+k^2/Z^2} \]
+and, since
+\[ |(1+\i\alpha)^{\i/\alpha}|^2=\exp\left(-2\frac{\arctan\alpha}{\alpha} \right), \]
+we obtain finally
+\[ \d w=\frac{2^7}{Z^4(1+k^2/Z^2)^4}f\left(\frac{k}{Z}\right)k\d k, \]
+with
+\[ f(\alpha)=\frac{1}{1-\e^{-2\pi/\alpha}}\exp\left(-4\frac{\arctan\alpha}{\alpha} \right). \]
+The limiting values of the function $ f (\alpha) $ are $ \e^{-4} $ for $ \alpha\ll 1 $ and $ \alpha/2\pi $ for $ \alpha\gg 1 $.
+
+The total probability of ionization of the $ K $-shell is obtained by integration of $ \d w $ over all energies of the emergent electron. A numerical evaluation gives $ w = 0.65Z^{-2} $.
+
+
+
+
+
+\textbf{5.} Determine the probability of emergence of an electron from the $ K $-shell of an atom with large $ Z $ in $\alpha$-decay of the nucleus. The velocity of the $\alpha$-particle is small compared with that of the $ K $-electron, but the time which it takes to leave the nucleus is small in comparison with the time of revolution of the electron (A. B. Migdal 1941, J. S. Levinger 1953).
+
+
+
+
+
+SOLUTION. After the emergence of the $\alpha$-particle, the perturbation acting on the electron is adiabatic The required effect is therefore determined essentially by the interval of time close to the “instant of application” of the perturbation which destroys the adiabaticity, when the $\alpha$-particle, leaving the nucleus and moving freely, is still at a distance small compared with the radius of the $ K $-orbit. The perturbation $ V $ which causes the ionization of the atom is here represented by the deviation of the combined field of the nucleus and the $\alpha$-particle from the purely Coulomb field $ Z/r $. The dipole moment of two particles with atomic weights $ 4 $ and $ A-4 $, and charges $ 2 $ and $ Z-2 $, at a distance $ vt $ apart (where $ v $ is the relative velocity of the nucleus and the $\alpha$-particle), is
+\[ \frac{2(A-4)-(Z-2)4}{A}vt=\frac{2(A-2Z)}{A}vt. \]
+Hence the dipole term in the field of the nucleus and the $\alpha$-particle is\footnote{If the difference $ A-2Z $ is small, it may be necessary to take account of the next (quadrupole) term also.
+}
+\[ V=\frac{2(A-2Z)}{A}vt\frac{z}{r^3}, \]
+where the $ z $-axis is in the direction of the velocity $ \bm{v} $. The matrix element of this perturbation reduces to that of $ z $: taking the matrix element of the equation of motion of the electron $ \ddot{z}=-Zz/r^3 $, we obtain
+\[ \left(\frac{z}{r^3} \right)_{0k}=\frac{(E-E_0)^2}{Z}z_{0k}. \]
+
+
+
+The required transition probability for one of the two electrons in the $ K $-shell is, by \eqref{41.2},
+\[ \d w=2\left|\int_{0}^{\infty}V_{0k}\e^{\i(E_0-E)t}\d t \right|^2\d k=\frac{8(A-2Z)^2v^2}{A^2Z^2}|z_{0k}|^2\frac{\d k}{2\pi} \]
+to calculate the integral, we include in the integrand an additional damping factor $ \e^{-\lambda t} $ with $ \lambda > 0 $, and then make $ \lambda\to  0 $ in the result. To calculate the matrix element of $ z = r \cos \theta $, we note that, since the orbital angular momentum in the initial state is $ l = 0 $, $ \cos \theta $ has a non-zero matrix element only for the transition to a state with $ l = 1 $, and
+\[ |(\cos\theta)_{01}|^2=\frac{1}{3}, \]
+and
+\[ |z_{0k}|^2=\frac{1}{3}|r_{0k}|^2. \]
+Calculating $ r_{0k} $ by means of the radial functions $ R_{00} $ and $ R_{k1} $, we find
+\[ \d w=\frac{2^{11}(A-2Z)^2v^2}{3A^2Z^6(1+k^2/Z^2)^5}f\left(\frac{k}{Z} \right)k\d k\]
+the function $ f $ being as in Problem 4.
+}
+\section{Transitions under the action of a periodic perturbation}\label{Transitions under the action of a periodic perturbation}
+The results are different for the probability of transitions to the states of the continuous spectrum under the action of a periodic perturbation. Let us suppose that, at some initial instant $ t = 0 $, the system is in the $ i $th stationary state of the discrete spectrum. We shall assume that the frequency $\omega$ of the periodic perturbation is such that
+\begin{equation}\label{42.1}
+\h\omega>E_{\mathrm{min}}-E-i^{(0)}
+\end{equation}
+where $ E_{\mathrm{min}} $ is the value of the energy where the continuous spectrum begins.
+
+It is evident from the results of \S\ref{Perturbations depending on time} that the chief part will be played by states of the continuous spectrum with energies $ E_f $ very close to the resonance energy $ E_i^{(0)} +\h\omega  $, i.e. those for which the difference $ \omega_{fi} -\omega $ is small. For this reason it is sufficient to consider, in the matrix elements \eqref{40.8} of the perturbation, only the first term (with the frequency $ \omega_{fi}-\omega $ close to zero). Substituting this term in \eqref{40.5} and integrating, we obtain
+\begin{equation}\label{42.2}
+a_{fi}=-\frac{\i}{\h}\int_0^tV_{fi}(t)\d t=-F_{fi}\frac{\exp\left[ \i(\omega_{fi}-\omega)t\right]-1}{\h(\omega_{fi}-\omega)}
+\end{equation}
+The lower limit of integration is chosen so that $ a_{fi} = 0 $ for $ t = 0 $, in accordance with the initial condition imposed.
+
+Hence we find for the squared modulus of $ a_{fi} $
+\begin{equation}\label{42.3}
+|a_{fi}|^2=|F_{fi}|^2\frac{4\sin^2\frac{\omega_{fi}-\omega}{2}t}{\h^2(\omega_{fi}-\omega)^2}.
+\end{equation}
+It is easy to see that, for large $ t $, this function can be regarded as proportional to $ t $. To show this, we notice that
+\begin{equation}\label{42.4}
+\lim\limits_{t\to\infty}\frac{\sin^2\alpha t}{\pi t\alpha^2}=\delta(\alpha)
+\end{equation}
+For when a $ \alpha\ne  0 $ this limit is zero, while for $ \alpha= 0 $ we have $ \frac{\sin^2\alpha t}{t\alpha^2} = t $, so that the limit is infinite; finally, integrating over $\alpha$ from $-\infty$ to $ +\infty $, we have (with the substitution $ \alpha t =\xi $)
+\[ \frac{1}{\pi}=\int_{-\infty}^{+\infty}\frac{\sin^2\alpha t}{t\alpha^2}\d\alpha=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{\sin^2\xi}{\xi^2}\d\xi=1. \]
+Thus the function on the left-hand side of equation \eqref{42.4} in fact satisfies all the conditions which define the delta function. Accordingly, we can write for large $ t $
+\[ |a_{fi}|^2=\frac{1}{\h^2}|F_{fi}|^2\pi t\delta\left(\frac{\omega_{fi}-\omega}{2} \right) \]
+or, substituting $ \h\omega_{fi} = E_f - E_i^{(0)} $ and using the fact that $ \delta(ax) = \delta(x)/\alpha $:
+\[ |a_{fi}|^2=\frac{2\pi}{\h}|F_{fi}|^2\delta\left(E_f-E_i^{(0)}-\h\omega \right)t. \]
+
+
+The expression $ |a_{fi}|^2 \d\nu_f $ is the probability of a transition from the original state to one in the interval $ \d\nu_f $. We see that, for large $ t $, it is proportional to the time interval elapsed since $ t = 0 $. The probability $ \d w_{fi} $ of the transition per unit time is\footnote{It is easy to verify that, on taking account of the second term in \eqref{40.8}, which we have omitted, additional expressions are obtained which, on being divided by $ t $, tend to zero as $ t \to+\infty $.
+}
+\begin{equation}\label{42.5}
+\d w_{fi}=\frac{2\pi}{\h}|F_{fi}|^2\delta\left(E_f-E_i^{(0)}-\h\omega \right)\d\nu_f.
+\end{equation}
+
+
+As we should expect, it is zero except for transitions to states with energy $ E_f = E_i^{(0)} + \h\omega $. If the energy levels of the continuous spectrum are not degenerate, so that $ \nu_f $ can be taken as the value of the energy alone, then the whole “interval” of states $ \d\nu_f $ reduces to a single state with energy $ E = E_i^{(0)} +  \h\omega $, and the probability of a transition to this state is
+\begin{equation}\label{42.6}
+w_{Ei}=\frac{2\pi}{\h}|F_{Ei}|^2.
+\end{equation}
+
+
+
+There is another method of deriving formula \eqref{42.5} that is methodologically instructive, in which the periodic perturbation is assumed not to be applied at a time $ t = 0 $ but to increase slowly from $ t = -\infty$ by an exponential law $ \e^{\lambda t} $ with a positive constant $\lambda$ which is then made to tend to zero (\textit{adiabatic switch-on}). The initial condition $ a_{fi} = 0 $ is accordingly applied at $ t = -\infty $. The matrix element of the perturbation now has the form
+\[ V_{fi}=F_{fi}\e^{\i(\omega_{fi}-\omega)t+\lambda t}, \]
+and \eqref{42.2} becomes
+\begin{equation}\label{42.7}
+a_{fi}=-\frac{\i}{\h}\int_{-\infty}^{t}V_{fi}(t)\d t-F_{fi}\frac{\exp\left[\i(\omega_{fi}-\omega)t+\lambda t \right]}{\h(\omega_{fi}-\omega-\i\lambda)}.
+\end{equation}
+Hence
+\[ |a_{fi}|^2=\frac{1}{\h^2}|F_{fi}|^2\frac{\e^{2\lambda t}}{(\omega_{fi}-\omega)^2+\lambda^2}. \]
+The transition probability per unit time is given by the derivative
+\[ \frac{\d}{\d t}|a_{fi}|^2=2\lambda|a_{fi}|^2. \]
+There is a formula
+\begin{equation}\label{42.8}
+\lim\limits_{\lambda\to0}\frac{\lambda}{\pi(\alpha^2+\lambda^2)}=\delta(\alpha),
+\end{equation}
+valid in the same sense as \eqref{42.4}; with this we find, taking the limit $ \lambda\to 0 $:
+\[ \frac{\d}{\d t}|a_{fi}|^2\to\frac{2\pi}{\h^2}|F_{fi}|^2\delta(\omega_{fi}-\omega), \]
+and thus return to \eqref{42.5}.
+
+\section{Transitions in the continuous spectrum}\label{Transitions in the continuous spectrum}
+One of the most important applications of perturbation theory is to calculate the probability of a transition in the continuous spectrum under the action of a constant (time-independent) perturbation. We have already mentioned that the states of the continuous spectrum are almost always degenerate. Having chosen in some manner the set of unperturbed wave functions corresponding to some given energy level, we can put the problem as follows. It is known that, at the initial instant, the system is in one of these states; it is required to determine the probability of the transition to another state with the same energy. For transitions from the initial state $ \i $ to states between $ \nu_f $ and $ \nu_f + \d\nu_f $ we have at once from \eqref{42.5} (putting $ \omega = 0 $ and changing the notation)
+\begin{equation}\label{43.1}
+\d w_{fi}=\frac{2\pi}{\h}|V_{fi}|^2\delta\left(E_f-E_i \right)\d\nu_f.
+\end{equation}
+This expression is, as we should expect, zero except for $ E_f = E_i $: under the action of a constant perturbation, transitions occur only between states with the same energy. It must be noticed that, for transitions from states of the continuous spectrum, the quantity $ \d w_{fi} $ cannot be regarded directly as the transition probability; it is not even of the right dimensions ($ 1 $/time). Formula \eqref{43.1} represents the number of transitions per unit time, and its dimensions depend on the chosen method of normalization of the wave functions of the continuous spectrum.\footnote{The phenomena comprised within the theory here discussed include, for example, various types of collision; the system in its initial and final states is a set of free particles and the perturbation is the interaction between them. With appropriate normalization of the wave functions, \eqref{43.1} may then be the collision cross-section (see \S126).
+}
+
+Let us calculate the perturbed wave function, which before the action of the perturbation is the same as the original unperturbed function $ \psi_i^{(0)} $. Using the method given at the end of \S\ref{Transitions under the action of a periodic perturbation}, we can regard the perturbation as being adiabatically applied according to $ \e^{\lambda t} $ with $ \lambda\to  0 $. From \eqref{42.7}, putting $ \omega = 0 $ and changing the notation, we have
+\begin{equation}\label{43.2}
+a_{fi}^{1}=V_{fi}\frac{\exp\left\{\frac{\i}{\h}(E_f-E_i)t+\lambda t\right\}}{E_i-E_f+\i\lambda}.
+\end{equation}
+
+
+
+The perturbed wave function is
+\[ \Psi_i=\Psi_i^{(0)}+\int a_{fi}^{(1)}\Psi_f^{(0)}\d\nu_f, \]
+where the integration is extended over the whole of the continuous spectrum.\footnote{If there is also a discrete spectrum, then we must add to the integral in this formula (and subsequent ones) the appropriate sum over the states of the discrete spectrum.} Substitution of \eqref{43.2} gives
+\begin{equation}\label{43.3}
+\Psi_i=\left[\psi_i^{(0)}+\int V_{fi}\psi_f^{(0)}\frac{\d\nu_f}{E_i-E_f+\i0} \right]\exp\left(-\frac{\i}{\h}E_i t \right).
+\end{equation}
+In the limit as $ \lambda\to 0 $, the factor $ \e^{\lambda t}$ becomes unity. The term $ +\i0 $, denoting the limit of $ \i\lambda $ as $ \lambda $ tends to zero from positive values, determines the manner of integration with respect to the variable $ E_f $ ($ \d E_f $ occurs as a factor in $ \d\nu_f $ together with the differentials of other quantities which describe the states of the continuous spectrum). Without the term $ \i\lambda $, the integrand in \eqref{43.3} would have a pole at $ E_f = E_i $, near which the integral would diverge. The term $ \i\lambda $ moves this pole into the upper half-plane of the complex variable $ E_f $. After the limit $ \lambda\to  0 $ is taken, the pole returns to the real axis, but we know that the path of integration must pass beneath it:
+\begin{equation}\label{43.4}
+\begin{tikzpicture}[line width=1.1pt, baseline]
+\draw (-4.5, 0) [-{Stealth[length=10pt, angle'=30]}]-- (-2.5, 0);
+\draw (-2.7, 0) -- (-0.5, 0) 
+arc[radius = 0.5cm, start angle = 180, delta angle = 180]
+-- (0.5, 0) -- (2.7, 0)
+(2.5, 0) [{Stealth[length=10pt, angle'=30, reversed]}-]-- (4.5, 0);
+\node[font=\large,above] at (0, 0) {$E_i$};
+\node[font=\large,below] at (4.2, 0) {$E_f$};
+\fill (0, 0) circle(1.5pt);
+\end{tikzpicture}
+\end{equation}
+
+
+
+The time factor in \eqref{43.3} shows that this function belongs, as it should, to the same energy $ E_i $ as the original unperturbed function. In other words, the function
+\begin{equation}\label{43.5}
+\psi_i=\psi_i^{(0)}+\int\frac{V_{fi}}{E_i-E_f+\i0}\psi_f^{(0)}\d\nu_f
+\end{equation}
+satisfies Schr\"odinger’s equation
+\[ (\hat{H}_0+\hat{V})\psi_i=E_i\psi_i \]
+It is therefore natural that the expression obtained should correspond exactly to \eqref{38.8}.\footnote{With this formula, the way in which the integral is to be taken can be found from the condition that the asymptotic expression for $ \psi_i $ at large distances should contain only an outgoing (and not an ingoing) wave (see \S136).}
+
+The calculations given above correspond to the first approximation of perturbation theory. It is not difficult to calculate the second approximation as well. To do this, we must derive the formula for the next approximation to $ \Psi_i $; this is easily effected by using the method of \S\ref{Perturbations independent of time} (now that we know the method of dealing with the “divergent” integrals). A simple calculation gives the formula
+\[ \Psi_i=\left\{\psi_i^{(0)}+\int\left[V_{fi}+\int\frac{V_{f\nu}V_{\nu i}}{E_i-E_f+\i0}\d\nu \right]\frac{\psi_f^{(0)}\d\nu_f}{E_i-E_f+\i0}  \right\}\exp\left(-\frac{\i}{\h}E_i t \right). \]
+
+
+
+Comparing this expression with formula \eqref{43.3}, we can write down the corresponding formula for the probability (or, more precisely, the number) of transitions, by direct analogy with \eqref{43.1}:
+\begin{equation}\label{43.6}
+\d w_{fi}=\frac{2\pi}{\h}\left|V_{fi}+\int\frac{V_{f\nu}V_{\nu i}}{E_i-E_\nu+\i0} \right|^2\delta(E_i-E_f)\d\nu_f.
+\end{equation}
+
+
+
+It may happen that the matrix element $ V_{fi} $ for the transition considered vanishes. The effect is then zero in the first approximation, and \eqref{43.6} becomes
+\begin{equation}\label{43.7}
+\d w_{fi}=\frac{2\pi}{\h}\left|\int\frac{V_{f\nu}V_{\nu i}}{E_i-E_\nu}\d\nu \right|^2\delta(E_f-E_i)\d\nu_f,
+\end{equation}
+In applications of this formula, the point $ E_\nu = E_i $ is not usually a pole of the integrand; the manner of integrating with respect to $ E_\nu $ is then unimportant, and the integral can be taken along the real axis.
+
+The states $\nu$ for which $ V_{f\nu} $ and $ V_{\nu i} $ are not zero are usually called \textit{intermediate states} for the transition $ i \to f $. Intuitively, we may say that this transition takes place as if in two steps $ i \to \nu $ and $ \nu\to  f $ (but such a description must not be taken literally, of course). It may happen that the transition $ i \to f $ can take place not through one but only through several successive intermediate states. Formula \eqref{43.7} can be at once generalized to such cases. For example, if two intermediate states are needed, we have
+\begin{equation}\label{43.8}
+\d w_{fi}=\frac{2\pi}{\h}\left|\int\frac{V_{f\nu'}V_{\nu'\nu}V_{\nu i}}{(E_i-E_{\nu'})(E_i-E_\nu)}\d\nu\d\nu'\right|^2\delta(E_f-E_i)\d\nu_f.
+\end{equation}
+
+
+
+Lastly, to clarify the mathematical significance of the integrals taken along a path of the form \eqref{43.4}, we shall prove the formula
+\begin{equation}\label{43.9}
+\int\frac{f(x)\d x}{x-a-\i0}=P\int\frac{f(x)\d x}{x-a}+\i\pi f(a),
+\end{equation}
+where the integration is along a segment of the real axis including the point $ x = a $. If we pass round the pole $ x = a $ along a semicircle of radius $\rho$, we find that the whole integral is equal to the sum of the integrals along the real axis from the lower limit to $ a -\rho  $ and from $ a +\rho $ to the upper limit, together with $ \i\pi $ times the residue of the integrand at the pole. In the limit $ \rho \to 0 $, the integrals along the real axis make the integral along the complete segment, taken as a principal value (denoted by $ P $), and the result is \eqref{43.9}, which may also be symbolically written
+\begin{equation}\label{43.10}
+\frac{1}{x-a-\i0}=P\frac{1}{x-a}+\i\pi\delta(x-a);
+\end{equation}
+$ P $ here denotes the taking of the principal value when integrating the function $ f (x)/(x - a) $.
+
+\section{The uncertainty relation for energy}\label{The uncertainty relation for energy}
+Let us consider a system composed of two weakly interacting parts. We suppose that it is known that at some instant these parts have definite values of the energy, which we denote by $ E $ and $ \epsilon $ respectively. Let the energy be measured again after some time interval $ \Delta t $; the values $ E' $, $ \epsilon' $ obtained are in general different from $ E $, $ \epsilon $. It is easy to determine the order of magnitude of the most probable value of the difference $ E'+\epsilon'-E-\epsilon $ which is found as a result of the measurement.
+
+According to formula \eqref{42.3} with $ \omega = 0 $, the probability of a transition of the system (after time $ t $), under the action of a time-independent perturbation, from a state with energy $ E $ to one with energy $ E' $ is proportional to
+\[ \left(\sin^2\frac{E'-E}{2\h}t \right)/(E'-E)2. \]
+Hence we see that the most probable value of the difference $ E'- E $ is of the order of $ \h/t $.
+
+Applying this result to the case we are considering (the perturbation being the interaction between the parts of the system), we obtain the relation
+\begin{equation}\label{44.1}
+|E_\epsilon-E'-\epsilon'|\Delta t\sim\h.
+\end{equation}
+
+
+
+Thus the smaller the time interval $ \Delta t $, the greater the energy change that is observed. It is important to notice that its order of magnitude $ \h/\Delta t $ is independent of the amount of the perturbation. The energy change determined by the relation \eqref{44.1} will be observed, however weak the interaction between the two parts of the system. This result is peculiar to quantum theory and has a deep physical significance. It shows that, in quantum mechanics, the law of conservation of energy can be verified by means of two measurements only to an accuracy of the order of $ \h/\Delta t $, where $ \Delta t $ is the time interval between the measurements.
+
+The relation \eqref{44.1} is often called the uncertainty relation for energy. However, it must be emphasized that its significance is entirely different from that of the uncertainty relation $ \Delta p\Delta x \sim \h $ for the coordinate and momentum. In the latter, $ \Delta p $ and $ \Delta x $ are the uncertainties in the values of the momentum and coordinate at the same instant; they show that these two quantities can never have entirely definite values simultaneously. The energies $ E $, $ \epsilon $, on the other hand, can be measured to any degree of accuracy at any instant. The quantity $ (E + \epsilon) - (E' + \epsilon') $ in \eqref{44.1} is the difference between two exactly measured values of the energy $ E + \epsilon $ at two different instants, and not the uncertainty in the value of the energy at a given instant.
+
+If we regard $ E $ as the energy of some system and $ \epsilon $ as that of a “measuring apparatus”, we can say that the energy of interaction between them can be taken into account only to within $ \h/\Delta t $. Let us denote by $ \Delta E ,  \Delta \epsilon,\dots $ the errors in the measurements of the corresponding quantities. In the favourable case when $ \epsilon, \epsilon' $ are known exactly ($ \Delta\epsilon =\Delta\epsilon' = 0 $), we have
+\begin{equation}\label{44.2}
+\Delta(E-E')\sim\frac{\h}{\Delta t}.
+\end{equation}
+
+
+
+From this relation we can derive important consequences concerning the measurement of momentum. The process of measuring the momentum of a particle (for definiteness, we shall speak of an electron) consists in a collision of the electron with some other (“measuring”) particle, whose momenta before and after the collision can be regarded as known exactly.\footnote{In the present analysis it is of no importance how the energy of the “measuring” particle is ascertained.} If we apply to this collision the law of conservation of momentum, we obtain three equations (the three components of a single vector equation) in six unknowns (the components of the momentum of the electron before and after the collision). The number of equations can be increased by bringing about a series of further collisions between the electron and “measuring” particles, and applying to each collision the law of conservation of momentum. This, however, increases the number of unknowns also (the momenta of the electron between collisions), and it is easy to see that, whatever the number of collisions, the number of unknowns will always be three more than the number of equations. Hence, in order to measure the momentum of the electron, it is necessary to bring in the law of conservation of energy at each collision, as well as that of momentum. The former, however, can be applied, as we have seen, only to an accuracy of the order of $ \h/\Delta t $, where $ \Delta t $ is the time between the beginning and end of the process in question.
+
+To simplify the subsequent discussion, it is convenient to consider an imaginary idealized experiment in which the “measuring particle” is a perfectly reflecting plane mirror; only one momentum component is then of importance, namely that perpendicular to the plane of the mirror. To determine the momentum $ P $ of the particle, the laws of conservation of momentum and energy give the equations
+\begin{equation}\label{44.3}
+p'+P'-p-P'=0,
+\end{equation}
+\begin{equation}\label{44.4}
+|\epsilon'+E'-\epsilon-E|\sim\frac{\h}{\Delta t}
+\end{equation}
+where $ P, E $ are the momentum and energy of the particle, and $ p, \epsilon $ those of the mirror; the unprimed and primed quantities refer to the instants before and after the collision respectively. The quantities $ p, p', \epsilon, \epsilon' $ relating to the “measuring particle” can be regarded as known exactly, i.e. the errors in them are zero. Then we have for the errors in the remaining quantities, from the above equations:
+\[ \Delta P=\Delta P',\quad |\Delta E'-\Delta E|\sim\frac{\h}{\Delta t}. \]
+But 
+\[ \Delta E = (\p E/\p P)\Delta P = v\Delta P, \] 
+where $ v $ is the velocity of the electron (before the collision), and similarly 
+\[ \Delta E' = v'\Delta P' = v'\Delta P. \]
+Hence we obtain
+\begin{equation}\label{44.5}
+|(v_x'-v_x)\delta P_x|\sim\frac{\h}{\delta t}.
+\end{equation}
+We have here added the suffix $ x $ to the velocity and momentum, in order to emphasize that this relation holds for each of their components separately.
+
+This is the required relation. It shows that the measurement of the momentum of the electron (with a given degree of accuracy $ \Delta P $) necessarily involves a change in its velocity (i.e. in the momentum itself). This change becomes greater as the duration of the measuring process becomes shorter. The change in velocity can be made arbitrarily small only as $ \Delta t \to \infty $, but measurements of momentum occupying a long time can be significant only for a free particle. The non-repeatability of a measurement of momentum after short intervals of time, and the “two-faced” nature of measurement in quantum mechanics—the necessity of a distinction between the measured value of a quantity and the value resulting from the process of measurement—are here exhibited with particular clarity.\footnote{The relation \eqref{44.5} and the elucidation of the physical significance of the uncertainty relation for energy are due to N. Bohr (1928).}
+
+The conclusion reached at the beginning of this section, which was based on perturbation theory, can also be derived from another standpoint by considering the decay of a system under the action of some perturbation. Let $ E_0 $ be some energy level of the system, calculated without any allowance for the possibility of its decay. We denote by $\tau$ the $ lifetime $ of this state of the system, i.e. the reciprocal of the probability of decay per unit time. Then we find by the same method that
+\begin{equation}\label{44.6}
+|E_0-E-\epsilon|\sim\h/\tau
+\end{equation}
+where $ E, \epsilon $ are the energies of the two parts into which the system decays. The sum $ E+\epsilon $, however, gives us an estimate of the energy of the system before it decays. Hence the above relation shows that the energy of a system, in some “quasi-stationary” state, which is free to decay can be determined only to within a quantity of the order of $ \h/\tau $. This quantity is usually called the \textit{width} $\Gamma$ of the level. Thus
+\begin{equation}\label{44.7}
+\Gamma\sim\h/\tau
+\end{equation}
+
+\section{Potential energy as a perturbation}\label{Potential energy as a perturbation}
+The case where the total potential energy of the particle in an external field can be regarded as a perturbation merits special consideration. The unperturbed Schrödinger’s equation is then the equation of free motion of the particle:
+\begin{equation}\label{45.1}
+\Delta \psi^{(0)}+k^2\psi^{(0)}=0,\quad k=\frac{\sqrt{2mE}}{\h}=\frac{p}{\h}
+\end{equation}
+and has solutions which represent plane waves. The energy spectrum of free motion is continuous, so that we are concerned with an unusual case of perturbation theory in a continuous spectrum. The solution of the problem is here more conveniently obtained directly, without having recourse to general formulae.
+
+The equation for the correction $ \psi^{(1)} $ to the wave function in the first approximation is
+\begin{equation}\label{45.2}
+\Delta\psi^{(1)}+k^2\psi^{(1)}=\frac{2mU}{\h^2}\psi^{(0)}
+\end{equation}
+where $ U $ is the potential energy. The solution of this equation, as we know from electrodynamics, can be written in the form of \textit{retarded potentials}, i.e. in the form\footnote{This is a particular integral of equation \eqref{45.2}, to which we may add any solution of the same equation with zero on the right-hand side, i.e. the unperturbed equation \eqref{45.1}.
+}
+\begin{equation}\label{45.3}
+\psi^{(1)}=-\frac{m}{2\pi\h^2}\int\psi^{(0)}U(x',y',z')\e^{\i kr}\frac{\d V'}{r},
+\end{equation}
+where
+\[ \d V'=\d x'\d y'\d z',\quad r^2=(x-x')^2+(y-y')^2+(z-z')^2. \]
+
+
+
+Let us find what conditions must be satisfied by the field $ U $ in order that it may be regarded as a perturbation. The condition of applicability of perturbation theory is contained in the requirement that $ \psi^{(1)}\ll \psi^{(0)} $. Let $ a $ be the order of magnitude of the dimensions of the region of space in which the field is noticeably different from zero. We shall first suppose that the energy of the particle is so small that $ ka $ is at most of the order of unity. Then the factor $ \e^{\i kr} $ in the integrand of \eqref{45.3} is unimportant in an order-of-magnitude estimate, and the integral is of the order of $ \psi^{(0)}|U|a^2 $, so that
+\[ \psi^{(1)}\sim(ma^2|U|\h^2)\psi^{(0)} \]
+and we have the condition
+\begin{equation}\label{45.4}
+|U|\ll\frac{\h^2}{ma^2}\qquad(\mathrm{for}\quad ka\lesssim1).
+\end{equation}
+We notice that the expression on the right has a simple physical meaning; it is the order of magnitude of the kinetic energy which the particle would have if enclosed in a volume of linear dimensions $ a $ (since, by the uncertainty relation, its momentum would be of the order of $ \h/a $).
+
+Let us consider, in particular, a potential well so shallow that the condition \eqref{45.4} holds for it. It is easy to see that in such a well there are no negative energy levels (R. Peierls 1929); this has been shown, for the particular case of a spherically symmetric well, in \S\ref{Spherical waves}, Problem, For, when $ E = 0 $, the unperturbed wave function reduces to a constant, which can be arbitrarily taken as unity: $ \psi^{(0)} = 1 $. Since $ \psi^{(1)}\ll \psi^{(0)} $, it is clear that the wave function $ \psi = 1+\psi^{(1)} $ for motion in the well nowhere vanishes; the eigenfunction, being without nodes, belongs to the normal state, so that $ E = 0 $ remains the least possible value of the energy of the particle. Thus, if the well is sufficiently shallow, only an infinite motion of the particle is possible: the particle cannot be “captured” by the well. Note that this result is peculiar to quantum theory; in classical mechanics a particle can execute a finite motion in any potential well.
+
+It must be emphasized that all that has been said refers only to a three-dimensional well. In a one- or two-dimensional well (i.e. one in which the field is a function of only one or two coordinates), there are always negative energy levels (see the Problems at the end of this section). This is related to the fact that, in the one- and two-dimensional cases, the perturbation theory under consideration is inapplicable for an energy $ E $ which is zero (or very small).\footnote{In the two-dimensional case $ \psi^{(1)} $ is expressed (as is known from the theory of the two-dimensional wave equation) as an integral similar to \eqref{45.3}, in which, instead of $ \frac{\e^{\i kr}}{r}\d x'\d y'\d z' $ we have $ \i\pi H_0^{(1)} (kr) \d x'\d y' $, where $ H_0^{(1)} $ is the Hankel function and $ r =\sqrt{(x - x)^2 + (y - y)^2}  $. As $ k →\to0 $, the Hankel function, and therefore the whole integral, tend logarithmically to infinity.
+	
+
+Similarly, in the one-dimensional case, we have, in the integrand, $ 2\pi\i\frac{\e^{\i kr}}{k}\d x'$, where $ r = |x -x'| $, and as $ k \to0 $ $ \psi^{(1)} $ tends to infinity as $ 1/k $.}
+
+For large energies, when $ ka\gg 1 $, the factor $ \e^{\i kr} $ in the integrand plays an important part, and markedly reduces the value of the integral. The solution \eqref{45.3} in this case can be transformed; the alternative form, however, is more conveniently derived by returning to equation \eqref{45.2}. We take as $ x $-axis the direction of the unperturbed motion; the unperturbed wave function then has the form $ \psi^{(0)} = \e^{\i kx} $ (the constant factor is arbitrarily taken as unity). Let us seek a solution of the equation
+\[ \Delta \psi^{(1)}+k^2\psi^{(1)}=\frac{2m}{\h^2}U\e^{\i kx} \]
+in the form $ \psi^{(1)} = \e^{\i kx}f $; in view of the assumed large value of $ k $, it is sufficient to retain in $ \Delta \psi^{(1)} $ only those terms in which the factor $ \e^{\i kx} $ is differentiated one or more times. We then obtain for $ f $ the equation
+\[ 2\i k\frac{\p f}{\p x}=\frac{2mU}{\h^2}, \]
+whence
+\begin{equation}\label{45.5}
+\psi^{(1)}=\e^{\i kx}f=-\frac{\i m}{\h^2 k}\e^{\i kx}\int U\d x.
+\end{equation}
+
+
+
+An estimation of this integral gives $ |\psi^{(1)}| \sim m|U|a/\h^2k $, so that the condition of applicability of perturbation theory in this case is
+\begin{equation}\label{45.6}
+|U|\ll\frac{\h^2}{ma^2}ka=\frac{\h\nu}{a},\quad ka\gg1.
+\end{equation}
+where $ v = k\h/m $ is the velocity of the particle. It is to be observed that this condition is weaker than \eqref{45.4}. Hence, if the field can be regarded as a perturbation at small energies of the particle, it can always be so regarded at large energies, whereas the converse is not necessarily true.\footnote{In the one-dimensional case the condition for perturbation theory to be applicable is given by the inequality \eqref{45.6} for all $ ka $. The derivation of the condition \eqref{45.4} given above for the three-dimensional case is not valid in the one-dimensional case, owing to the divergence of the resulting function $ \psi^{(1)} $ (see the preceding footnote).
+}
+
+The applicability of the perturbation theory developed here to a Coulomb field requires special consideration. In a field where $ U = \alpha/r $, it is impossible to separate a finite region of space outside which $ U $ is considerably less than inside it. The required condition can be obtained by writing in \eqref{45.6} a variable distance $ r $ instead of the parameter $ a $; this leads to the inequality
+\begin{equation}\label{45.7}
+\frac{\alpha}{\h v}\ll1.
+\end{equation}
+Thus, for large energies of the particle, a Coulomb field can be regarded as a perturbation.\footnote{It must be borne in mind that the integral \eqref{45.5} with a field $ U = \alpha/r $ diverges (logarithmically) when $ x/\sqrt{y^2 + z^2} $ is large. Hence the wave function in a Coulomb field, obtained by means of perturbation theory, is inapplicable within a narrow cone about the $ x $-axis.}
+
+Finally, we shall derive a formula which approximately determines the wave function of a particle whose energy $ E $ everywhere considerably exceeds the potential energy $ U $ (no other conditions being imposed). In the first approximation, the wave function depends on the coordinates in the same way as for free motion (whose direction is taken as the $ x $-axis). Accordingly, let us look for $\psi$ in the form $ \psi= \e^{\i kx}F $, where $ F $ is a function of the co-ordinates which varies slowly in comparison with the factor $ \e^{\i kx} $ (but we cannot in general say that it is close to unity). Substituting in Schr\"odinger’s equation, we obtain for $ F $ the equation
+\begin{equation}\label{45.8}
+2\i k\frac{\p F}{\p x}=\frac{2m}{\h^2}UF,
+\end{equation}
+whence
+\begin{equation}\label{45.9}
+\psi=\e^{\i kx}F=\mathrm{const}\cdot\e^{\i kx}\exp\left(-\frac{\i}{\h v}\int U\d x \right).
+\end{equation}
+
+
+
+This is the required expression. It should, however, be borne in mind that this formula is not valid at large distances. In equation \eqref{45.8} a term $ \Delta F $ has been omitted which contains second derivatives of $ F $. The derivative $ \p^2F/{\p x}^2 $, together with the first derivative $ \p F/\p x $, tends to zero at large distances, but the derivatives with respect to the transverse coordinates $ y $ and $ z $ do not tend to zero, and can be neglected only if $ x\ll ka^2 $.
+
+
+
+
+
+{\small
+\textbf{PROBLEMS}
+
+
+\textbf{1.} Determine the energy level in a one-dimensional potential well whose depth is small. It is assumed that the condition \eqref{45.4} is satisfied.
+
+
+
+
+
+SOLUTION. We make the hypothesis, which will be confirmed by the result, that the energy level $ |E|\ll |U| $. Then, on the right-hand side of Schr\"odinger’s equation
+\[ \frac{\d^2\psi}{{\d x}^2}=\frac{2m}{\h^2}(U(x)-E)\psi \]
+we can neglect $ E $ in the region of the well, and regard $\psi$ as a constant, which without loss of generality can be taken as unity:
+\[ \frac{\d^2\psi}{{\d x}^2}=\frac{2m}{\h^2}U. \]
+We integrate this equation with respect to $ x $ between two points $ \pm x_1 $ such that $ a\ll x_1\ll 1/\varkappa $, where a is the width of the well and $ \varkappa = \sqrt{2m|E|}/\h $. Since the integral of $ U (x) $ converges, the integration on the right can be extended to the whole range from $ -\infty $ to $ +\infty $:
+\begin{equation}\label{45-1-1}
+\left.\frac{\d \psi}{\d x}\right|_{-x_1}^{x_1}=\frac{2m}{\h^2}\int_{-\infty}^{+\infty}U\d x.\tag{1}
+\end{equation}
+At large distances from the well, the wave function is of the form $ \psi = \e^{\pm\varkappa x} $. Substituting this in \eqref{45-1-1}, we find
+\[ -2\varkappa=\frac{2m}{\h^2}\int_{-\infty}^{+\infty}U\d x \]
+or
+\[ |E|=\frac{m}{2\h^2}\left(\int_{-\infty}^{+\infty}U\d x \right)^2. \]
+We see that, in accordance with the hypothesis, the energy of the level is a small quantity of a higher order (the second) than the depth of the well.
+
+
+
+
+
+\textbf{2.} Determine the energy level in a two-dimensional potential well $ U (r) $ (where $ r $ is the polar coordinate in the plane) of small depth; it is assumed that the integral $ \int_{0}^{\infty}rU\d r $ converges.
+
+
+
+
+
+SOLUTION. Proceeding as in the previous problem, we have in the region of the well the equation
+\[ \frac{1}{r}\frac{\d}{\d r}\left(r\frac{\d\psi}{\d r} \right)=\frac{2m}{\h^2}U. \]
+
+
+
+Integrating this with respect to $ r $ from $ 0 $ to $ r_1 $ (where $ a\ll r_1\ll 1/\varkappa $), we find
+\begin{equation}\label{45-2-1}
+\left.\frac{\d\psi}{\d r}\right|_{r=r_1}=\frac{2m}{\h^2 r_1}\int_{0}^{\infty}rU(r)\d r.\tag{1}
+\end{equation}
+At large distances from the well, the equation of free motion in two dimensions is
+\[ \frac{1}{r}\frac{\d}{\d r}\left(r\frac{\d\psi}{\d r} \right)+\frac{2m}{\h^2}E\psi=0 \]
+and has a solution (vanishing at infinity) $ \psi =\mathrm{const}\cdot H_0^{(1)}(\i\varkappa r) $; for small values of the argument, the leading term in this function is proportional to $ \log \varkappa r $. Bearing this in mind, we equate the logarithmic derivatives of $ \psi $ for $ r \sim a $ inside the well (the right-hand side of \eqref{45-2-1} and outside it, obtaining
+\[ \frac{1}{a\log\varkappa a}\approx\frac{2m}{\h^2 a}\int_0^\infty U(r)r\d r, \]
+whence
+\[ |E|\sim\frac{\h^2}{ma^2}\exp\left[-\frac{\h^2}{m}\left|\int_0^\infty Ur\d r \right|^{-1} \right]. \]
+We see that the energy of the level is exponentially small compared with the depth of the well.}
