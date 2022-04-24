@@ -1,9 +1,12 @@
 \documentclass[]{landaubook}
 \captionsetup[wrapfigure]{labelformat=empty}
+\captionsetup[figure]{labelformat=empty}
 \author{L.D. LANDAU, E.M. LIFSHITZ}
 \title{QUANTUM MECHANICS}
 \date{}
-\usetikzlibrary{arrows.meta}
+%\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns,math,arrows.meta}
+\usepgfplotslibrary{polar}
 \begin{document}
 
 % frontmatter
@@ -22,6 +25,7 @@
 \include{./src/notation}
 \mainmatter
 \pagestyle{mainstyle}
+\counterwithout{figure}{chapter}
 \include{./src/chapter01}
 \include{./src/chapter02}
 \include{./src/chapter03}
@@ -31,6 +35,9 @@
 \include{./src/chapter07}
 \include{./src/chapter08}
 \backmatter
+\appendix
+\renewcommand\thesection{\alph{section}}
+\include{./src/MATHEMATICAL_APPENDICES}
 % backmatter:
 % 包括 index 、版权页
 % 译后记(?)
