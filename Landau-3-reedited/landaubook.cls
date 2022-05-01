@@ -40,6 +40,7 @@
 \RequirePackage{float}
 \RequirePackage[stable]{footmisc}
 \RequirePackage{pgfplots}
+\RequirePackage{svg}
 % note: 使用 unicode-math 替换数学字体宏包
 % note: 使用 imakeidx 宏包创建 index
 % note: 使用 wrapfig 绘制绕排
